@@ -18,6 +18,9 @@ jobs:
                   echo "${{ secrets.SUBMODULE_DEPLOY_KEY }}" > ~/.ssh/id_rsa
                   chmod 600 ~/.ssh/id_rsa
                   ssh-keyscan github.com >> ~/.ssh/known_hosts
+                  # 移除可能存在的错误 URL 重写配置
+                  git config --global --remove-section url."git@github.com-kemeow0815:" || true
+                  # 确保正确的 SSH 配置
                   git config --global url."git@github.com:".insteadOf "https://github.com:"
 
             # 2. 获取源码
