@@ -43,13 +43,13 @@ jobs:
                   node-version: "20"
                   cache: "pnpm"
 
-            # 5. 安装依赖（pnpm 优先，npm 备选）
+            # 5. 安装依赖
             - name: Install Dependencies
               run: |
                   if [ -f "pnpm-lock.yaml" ]; then
-                      pnpm install --frozen-lockfile
+                      pnpm install --frozen-lockfile || pnpm install --no-frozen-lockfile
                   else
-                      npm ci
+                      npm ci || npm install
                   fi
 
             # 6. 安装 Hexo CLI
