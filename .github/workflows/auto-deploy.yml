@@ -13,9 +13,12 @@ jobs:
         steps:
             # 1. 配置 SSH Key（用于拉取私有子模块）
             - name: Setup SSH for Submodules
+              env:
+                  SSH_PRIVATE_KEY: ${{ secrets.SUBMODULE_DEPLOY_KEY }}
               run: |
                   mkdir -p ~/.ssh
-                  echo "${{ secrets.SUBMODULE_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+                  # 使用正确的方式写入 SSH key，处理换行符
+                  echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
                   chmod 600 ~/.ssh/id_rsa
                   ssh-keyscan github.com >> ~/.ssh/known_hosts
                   # 移除可能存在的错误 URL 重写配置
