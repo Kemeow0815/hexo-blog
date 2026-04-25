@@ -11,11 +11,21 @@ jobs:
         runs-on: ubuntu-latest
         name: auto deploy
         steps:
-            # 1. 获取源码
+            # 1. 配置 SSH Key（用于拉取私有子模块）
+            - name: Setup SSH for Submodules
+              run: |
+                  mkdir -p ~/.ssh
+                  echo "${{ secrets.SUBMODULE_DEPLOY_KEY }}" > ~/.ssh/id_rsa
+                  chmod 600 ~/.ssh/id_rsa
+                  ssh-keyscan github.com >> ~/.ssh/known_hosts
+                  git config --global url."git@github.com:".insteadOf "https://github.com:"
+
+            # 2. 获取源码
             - name: Checkout
               uses: actions/checkout@v3
               with:
-                  submodules: true # Checkout private submodules(themes or something else)
+                  submodules: recursive
+                  token: ${{ secrets.GITHUB_TOKEN }}
 
             # 2. 配置 Node.js 环境
             - name: Setup Node.js
