@@ -55,7 +55,7 @@ jobs:
                       npm ci || npm install
                   fi
 
-            # 6. 安装 Hexo CLI
+            # 6. 安装 Hexo
             - name: Install Hexo CLI
               run: npm install -g hexo-cli
 
