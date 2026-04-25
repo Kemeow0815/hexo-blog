@@ -68,7 +68,7 @@ jobs:
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v4
               with:
-                  github_token: ${{ secrets.GIT_TOKEN }}
+                  personal_token: ${{ secrets.GIT_TOKEN }}
                   external_repository: Kemeow0815/blog
                   publish_branch: gh-pages
                   publish_dir: ./public
