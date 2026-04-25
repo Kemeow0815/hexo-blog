@@ -43,18 +43,23 @@ jobs:
                   node-version: "20"
                   cache: "pnpm"
 
-            # 4. 安装依赖
+            # 5. 安装依赖（pnpm 优先，npm 备选）
             - name: Install Dependencies
-              run: pnpm install --frozen-lockfile
+              run: |
+                  if [ -f "pnpm-lock.yaml" ]; then
+                      pnpm install --frozen-lockfile
+                  else
+                      npm ci
+                  fi
 
-            # 5. 安装 Hexo CLI
+            # 6. 安装 Hexo CLI
             - name: Install Hexo CLI
-              run: pnpm add -g hexo-cli
+              run: npm install -g hexo-cli
 
-            # 6. 生成静态文件
+            # 7. 生成静态文件
             - name: Generate Public Files
               run: |
-                  pnpm run build
+                  npm run build
 
             # 7. 部署到 GitHub 仓库
             - name: Deploy to GitHub Pages
