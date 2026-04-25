@@ -30,18 +30,18 @@ jobs:
                   submodules: recursive
                   token: ${{ secrets.GITHUB_TOKEN }}
 
-            # 2. 配置 Node.js 环境
-            - name: Setup Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "20"
-                  cache: "pnpm" # 启用 pnpm 缓存
-
             # 3. 安装 pnpm
             - name: Install pnpm
               uses: pnpm/action-setup@v2
               with:
                   version: 8
+
+            # 4. 配置 Node.js 环境
+            - name: Setup Node.js
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "20"
+                  cache: "pnpm"
 
             # 4. 安装依赖
             - name: Install Dependencies
