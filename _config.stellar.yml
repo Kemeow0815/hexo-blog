@@ -336,15 +336,9 @@ comments:
 ######## Footer ########
 footer:
   social:
-    Moon:
-      icon: '<img id="ThemeM" src="https://upyun.thatcdn.cn/public/img/icon/Moon.png"/>'
-      url: javaScript:void('永夜');
-    Sun:
-      icon: '<img id="ThemeL" src="https://upyun.thatcdn.cn/public/img/icon/Sun.png"/>'
-      url: javaScript:void('永昼');
-    AI:
-      icon: '<img id="ThemeAI" src="https://upyun.thatcdn.cn/public/img/icon/AI.png"/>'
-      url: javaScript:void('跟随系统');
+    theme:
+      icon: '<img id="ThemeToggle" src="https://upyun.thatcdn.cn/public/img/icon/Sun.png"/>'
+      url: javaScript:void('切换主题');
     github:
       icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
       url: https://github.com/Kemeow0815
