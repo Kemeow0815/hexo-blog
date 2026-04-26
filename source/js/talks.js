@@ -62,18 +62,24 @@
   }
 
   /**
-   * 处理内容中的链接
+   * 处理内容中的链接和表情
    * @param {string} text - 原始文本
    * @returns {string} HTML 字符串
    */
-  function processLinks(text) {
+  function processContent(text) {
     if (!text) return "";
 
-    // 处理链接
+    // 1. 处理 Telegram 表情 HTML，转换为纯文本表情
+    // 匹配 <i class="emoji" ...><b>😭</b></i> 格式
+    text = text.replace(/<i\s+class="emoji"[^>]*><b>([^<]+)<\/b><\/i>/g, "$1");
+
+    // 2. 处理链接
     const linkRegex = /(https?:\/\/[^\s]+)/g;
-    return text.replace(linkRegex, (url) => {
+    text = text.replace(linkRegex, (url) => {
       return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
     });
+
+    return text;
   }
 
   /**
@@ -84,7 +90,21 @@
   function processImages(images) {
     if (!images || images.length === 0) return "";
 
-    const imageContainer = images
+    // 过滤掉表情符号图片（通常是 Telegram 的表情贴纸）
+    const validImages = images.filter((img) => {
+      const imgUrl = img.url || img;
+      // 排除表情符号图片（多种格式）
+      const isEmoji =
+        /emoji|sticker|telegram\.org\/emoji/i.test(imgUrl) ||
+        /F09F[0-9A-F]{4}/i.test(imgUrl) || // Unicode 表情编码
+        (/\.(webp|png)$/i.test(imgUrl) && imgUrl.includes("emoji")) ||
+        imgUrl.startsWith("//telegram.org/img/emoji");
+      return !isEmoji;
+    });
+
+    if (validImages.length === 0) return "";
+
+    const imageContainer = validImages
       .map((img) => {
         const imgUrl = img.url || img;
         return `<div class="talk-image-item"><img src="${imgUrl}" alt="talk image" onclick="viewImage(this)" loading="lazy"></div>`;
@@ -101,7 +121,7 @@
    */
   function renderTalkItem(talk) {
     const timeStr = formatTime(talk.time);
-    const contentHtml = processLinks(talk.text);
+    const contentHtml = processContent(talk.text);
     const imagesHtml = processImages(talk.image);
     const talkId = talk.id || Date.now();
 
@@ -120,7 +140,7 @@
               </svg>
               ${talk.views || 0}
             </span>
-            <span class="talk-comment-btn" onclick="scrollToComment('${talkId}', ${JSON.stringify(talk.text).replace(/'/g, "\\'")})">
+            <span class="talk-comment-btn" data-talk-id="${talkId}" data-talk-text="${encodeURIComponent(talk.text || "")}">
               <svg viewBox="0 0 1024 1024" width="14" height="14">
                 <path d="M512 64C264.6 64 64 265.4 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zM512 880c-203.3 0-368-164.7-368-368s164.7-368 368-368 368 164.7 368 368-164.7 368-368 368z" fill="#999"/>
                 <path d="M672 560H352c-17.7 0-32-14.3-32-32s14.3-32 32-32h320c17.7 0 32 14.3 32 32s-14.3 32-32 32z" fill="#999"/>
@@ -215,6 +235,25 @@
       }, 300);
     };
     window.addEventListener("resize", state.resizeHandler);
+
+    // 绑定评论按钮点击事件
+    bindCommentButtons();
+  }
+
+  /**
+   * 绑定评论按钮点击事件
+   */
+  function bindCommentButtons() {
+    const buttons = document.querySelectorAll(".talk-comment-btn");
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const talkId = this.getAttribute("data-talk-id");
+        const talkText = decodeURIComponent(
+          this.getAttribute("data-talk-text") || "",
+        );
+        scrollToComment(talkId, talkText);
+      });
+    });
   }
 
   /**

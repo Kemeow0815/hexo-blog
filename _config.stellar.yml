@@ -271,8 +271,8 @@ comments:
   # Twikoo
   # https://twikoo.js.org/
   twikoo:
-    js: https://gcore.jsdelivr.net/npm/twikoo@1.6/dist/twikoo.all.min.js # 建议锁定版本
-    envId: https://xxx # vercel函数
+    js: https://gcore.jsdelivr.net/npm/twikoo@1.7.7/dist/twikoo.all.min.js # 建议锁定版本
+    envId: https://hexo-stellar.268682.xyz # vercel函数
 
   # Waline
   # https://waline.js.org/
