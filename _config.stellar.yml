@@ -378,8 +378,8 @@ footer:
     #     - '[xxx](/)'
   content: | # 支持 Markdown 格式
     <center>
-    <div id="runtime_container" style="margin: 1rem 0; padding: 0.5rem; border-radius: 8px; background: var(--block);">
-      <span id="runtime_span" style="font-size: 14px; color: var(--text-p2); font-weight: 500;">
+    <div id="runtime_container" style="margin: 1rem auto; padding: 0.5rem 1rem; border-radius: 8px; background: var(--block); max-width: calc(100% - 2rem); box-sizing: border-box; text-align: center;">
+      <span id="runtime_span" style="font-size: 14px; color: var(--text-p2); font-weight: 500; line-height: 1.6; white-space: nowrap;">
         🦉 正在计算运行时间... 🦉
       </span>
     </div>
