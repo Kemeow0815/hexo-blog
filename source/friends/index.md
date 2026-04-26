@@ -1,5 +1,6 @@
 ---
 menu_id: more
+layout: page
 title: 友链
 ---
 

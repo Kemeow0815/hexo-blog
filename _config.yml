@@ -15,8 +15,9 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: httpS://kemeow0815.github.io/blog/
-permalink: posts/:abbrlink/ 
+url: https://kemeow0815.github.io/blog/
+permalink: posts/:abbrlink.html
+
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -118,3 +119,18 @@ feed:
   content_limit_delim: ' '  # 截断分隔符
   order_by: -date     # 按日期倒序排列
   autodiscovery: true # 在 HTML 头部添加自动发现标签
+
+# abbrlink 配置
+abbrlink:
+  alg: crc32      #算法，支持 crc16(default)和 crc32
+  rep: hex        #进制，支持 dec(default)和 hex
+  drafts: false   #true：对草稿也进行处理，false：不处理草稿。默认为 false
+  # 从目录树生成类别
+  # depth: 您想生成的目录树的最大深度, 需要大于 0
+  auto_category:
+    enable: true  #默认为 true
+    depth:        #默认为 3
+    over_write: false
+  auto_title: false #启用自动标题，它可以按路径自动填充标题
+  auto_date: false #启用自动日期，可以按今天的时间自动填写日期
+  force: false #启用 Force 模式，在这种模式下插件将忽略缓存，并为每一篇文章计算生成永久链接，即使它已经有了永久链接。这个设置只会更新永久链接，而不是更新其他前置变量。

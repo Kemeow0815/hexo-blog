@@ -17,6 +17,11 @@ preconnect:
 inject:
   head:
     - '<link rel="stylesheet" href="/blog/css/custom-codeblock.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/calendar.css" type="text/css">'
+  script:
+    - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
+    - '<script defer src="/blog/js/custom.js"></script>'
+    - '<script defer src="/blog/js/chinese-lunar.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
 # 如果访问地址不在备用站主机列表，则警告信息为非法克隆
@@ -52,27 +57,26 @@ menubar:
     # icon: 支持 svg/img 标签，可以定义在 icons.yml 文件中，也支持外部图片的 URL
     # title: 标题
     # url: 点击跳转到哪，支持相对路径和绝对路径
-    # - id: post
-    #   theme: '#1BCDFC'
-    #   icon: solar:documents-bold-duotone
-    #   title: 博客
-    #   url: /
-    # - id: wiki
-    #   theme: '#3DC550'
-    #   icon: solar:notebook-bookmark-bold-duotone
-    #   title: 文档
-    #   url: /wiki/
-    # - id: explore
-    #   theme: '#FA6400'
-    #   icon: solar:planet-bold-duotone
-    #   title: 探索
-    #   url: /explore/
-    # - id: social
-    #   theme: '#F44336'
-    #   icon: solar:chat-square-like-bold-duotone
-    #   title: 社交
-    #   url: /friends/
-
+    - id: post
+      theme: '#1BCDFC'
+      icon: solar:documents-bold-duotone
+      title: 博客
+      url: /
+    - id: moment
+      theme: '#3DC550'
+      icon: shuoshuo
+      title: 即刻短文
+      url: /moment/
+    - id: social
+      theme: '#F44336'
+      icon: solar:chat-square-like-bold-duotone
+      title: 社交
+      url: /friends/
+    - id: about
+      theme: '#FA6400'
+      icon: about
+      title: 关于
+      url: /about/
 
 ######## Main ########
 # 站点主结构树
@@ -80,14 +84,14 @@ site_tree:
   # -- 列表类页面 -- #
   # 主页配置
   home:
-    leftbar: welcome, recent
-    rightbar: 
+    leftbar: welcome, recent, tagcloud
+    rightbar: ghuser, statement, calendar
   # 博客列表页配置
   index_blog:
     base_dir: blog # 只影响自动生成的页面路径
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
-    leftbar: welcome, recent # for categories/tags/archives
-    rightbar: 
+    leftbar: welcome, recent, tagcloud
+    rightbar: ghuser, statement
     nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
       # '朋友文章': /friends/rss/
   # 博客专栏列表页配置
@@ -154,7 +158,11 @@ site_tree:
   # 其它自定义页面配置 layout: page
   page:
     leftbar: recent
-    rightbar: toc
+    rightbar: 
+  # 关于页面配置
+  about:
+    leftbar: 
+    rightbar: ghuser, moment
 
 
 ######## Notebook ########
@@ -202,12 +210,15 @@ article:
   # 文章许可协议
   license: '本文采用 [署名-非商业性使用-相同方式共享 4.0 国际](https://creativecommons.org/licenses/by-nc-sa/4.0/) 许可协议，转载请注明出处。'
   # 分享
-  share: # [wechat, weibo, email, link]
+  share: [wechat, weibo, email, link]
   # 相关文章，需要安装插件 (for layout: post)
   # npm i hexo-related-popular-posts
   related_posts:
     enable: true
     max_count: 5
+  # 捐赠
+  donate:
+    wechat: 'https://upyun.thatcdn.cn/public/img/donate/wechat.png'  # 微信收款二维码地址
 
 search:
   service: local_search # local_search, algolia_search, todo...
@@ -508,6 +519,9 @@ data_services:
     js: /js/services/weibo.js
   memos:
     js: /js/services/memos.js
+  # 即刻短文
+  moment:
+    js: /js/services/moment.js
   # chat
   voice: 
     js: /js/plugins/voice.js
