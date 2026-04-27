@@ -62,7 +62,7 @@
   }
 
   /**
-   * 处理内容中的链接和表情
+   * 处理内容中的 HTML 格式
    * @param {string} text - 原始文本
    * @returns {string} HTML 字符串
    */
@@ -73,11 +73,14 @@
     // 匹配 <i class="emoji" ...><b>😭</b></i> 格式
     text = text.replace(/<i\s+class="emoji"[^>]*><b>([^<]+)<\/b><\/i>/g, "$1");
 
-    // 2. 处理链接
-    const linkRegex = /(https?:\/\/[^\s]+)/g;
-    text = text.replace(linkRegex, (url) => {
-      return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
-    });
+    // 2. 处理 Markdown 分隔线 ---
+    text = text.replace(
+      /---/g,
+      '<hr style="border:none;border-top:1px solid #ddd;margin:10px 0;"/>',
+    );
+
+    // 3. 处理换行符
+    text = text.replace(/\n/g, "<br/>");
 
     return text;
   }
@@ -117,7 +120,7 @@
   /**
    * 渲染单条说说
    * @param {Object} talk - 说说数据
-   * @returns {string} HTML 字符串
+   * @returns {HTMLElement} DOM 元素
    */
   function renderTalkItem(talk) {
     const timeStr = formatTime(talk.time);
@@ -125,32 +128,41 @@
     const imagesHtml = processImages(talk.image);
     const talkId = talk.id || Date.now();
 
-    return `
-      <div class="talk-item" id="talk-${talkId}">
-        <div class="talk-content">
-          <div class="talk-header">
-            <span class="talk-time">${timeStr}</span>
-          </div>
-          <div class="talk-text">${contentHtml}</div>
-          ${imagesHtml}
-          <div class="talk-footer">
-            <span class="talk-views">
-              <svg viewBox="0 0 1024 1024" width="14" height="14">
-                <path d="M512 106.7c-213.3 0-394.7 149.3-448 341.3-10.7 42.7-10.7 85.3 0 128 53.3 192 234.7 341.3 448 341.3s394.7-149.3 448-341.3c10.7-42.7 10.7-85.3 0-128-53.3-192-234.7-341.3-448-341.3z m0 554.6c-117.3 0-213.3-96-213.3-213.3s96-213.3 213.3-213.3 213.3 96 213.3 213.3-96 213.3-213.3 213.3z m0-320c-58.7 0-106.7 48-106.7 106.7s48 106.7 106.7 106.7 106.7-48 106.7-106.7-48-106.7-106.7-106.7z" fill="#999"/>
-              </svg>
-              ${talk.views || 0}
-            </span>
-            <span class="talk-comment-btn" data-talk-id="${talkId}" data-talk-text="${encodeURIComponent(talk.text || "")}">
-              <svg viewBox="0 0 1024 1024" width="14" height="14">
-                <path d="M512 64C264.6 64 64 265.4 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zM512 880c-203.3 0-368-164.7-368-368s164.7-368 368-368 368 164.7 368 368-164.7 368-368 368z" fill="#999"/>
-                <path d="M672 560H352c-17.7 0-32-14.3-32-32s14.3-32 32-32h320c17.7 0 32 14.3 32 32s-14.3 32-32 32z" fill="#999"/>
-              </svg>
-              评论
-            </span>
-          </div>
+    // 创建 DOM 元素而不是返回字符串
+    const itemDiv = document.createElement("div");
+    itemDiv.className = "talk-item";
+    itemDiv.id = `talk-${talkId}`;
+
+    itemDiv.innerHTML = `
+      <div class="talk-content">
+        <div class="talk-header">
+          <span class="talk-time">${timeStr}</span>
+        </div>
+        <div class="talk-text"></div>
+        ${imagesHtml}
+        <div class="talk-footer">
+          <span class="talk-views">
+            <svg viewBox="0 0 1024 1024" width="14" height="14">
+              <path d="M512 106.7c-213.3 0-394.7 149.3-448 341.3-10.7 42.7-10.7 85.3 0 128 53.3 192 234.7 341.3 448 341.3s394.7-149.3 448-341.3c10.7-42.7 10.7-85.3 0-128-53.3-192-234.7-341.3-448-341.3z m0 554.6c-117.3 0-213.3-96-213.3-213.3s96-213.3 213.3-213.3 213.3 96 213.3 213.3-96 213.3-213.3 213.3z m0-320c-58.7 0-106.7 48-106.7 106.7s48 106.7 106.7 106.7 106.7-48 106.7-106.7-48-106.7-106.7-106.7z" fill="#999"/>
+            </svg>
+            ${talk.views || 0}
+          </span>
+          <span class="talk-comment-btn" data-talk-id="${talkId}" data-talk-text="${encodeURIComponent(talk.text || "")}">
+            <svg viewBox="0 0 1024 1024" width="14" height="14">
+              <path d="M512 64C264.6 64 64 265.4 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zM512 880c-203.3 0-368-164.7-368-368s164.7-368 368-368 368 164.7 368 368-164.7 368-368 368z" fill="#999"/>
+              <path d="M672 560H352c-17.7 0-32-14.3-32-32s14.3-32 32-32h320c17.7 0 32 14.3 32 32s-14.3 32-32 32z" fill="#999"/>
+            </svg>
+            评论
+          </span>
         </div>
       </div>
     `;
+
+    // 使用 innerHTML 设置文本内容，确保 HTML 标签被正确解析
+    const textDiv = itemDiv.querySelector(".talk-text");
+    textDiv.innerHTML = contentHtml;
+
+    return itemDiv;
   }
 
   /**
@@ -221,7 +233,8 @@
 
     // 渲染每条说说
     talks.forEach((talk) => {
-      talkContainer.innerHTML += renderTalkItem(talk);
+      const talkItem = renderTalkItem(talk);
+      talkContainer.appendChild(talkItem);
     });
 
     // 应用瀑布流布局
