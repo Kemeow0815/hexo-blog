@@ -76,7 +76,7 @@
     // 2. 处理 Markdown 分隔线 ---
     text = text.replace(
       /---/g,
-      '<hr style="border:none;border-top:1px solid #ddd;margin:10px 0;"/>',
+      '<hr style="border:none;border-top:2px solid var(--block-border);margin:12px 0;"/>',
     );
 
     // 3. 处理换行符

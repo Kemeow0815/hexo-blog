@@ -4,6 +4,11 @@ title: 即刻
 layout: page
 rightbar: timeline
 comments: true
+banner: https://p.268682.xyz/pic?img=ua
+banner_info:
+  avatar: https://wsrv.nl/?url=github.com%2FKemeow0815.png
+  title: 即刻短文
+  subtitle: 记录着我的一些日常......
 ---
 
 <div id="talk" class="talk-container"></div>
