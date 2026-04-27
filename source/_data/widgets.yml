@@ -31,8 +31,30 @@ welcome:
     content: |
         本站托管于 Github pages, 可能会出现加载缓慢或丢失问题，希望开着VPN访问。
         <br> 
-        今日诗词:  <span id="jinrishici-sentence"> </span>
-        <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"> </script>
+        每日一言:  <span id="hitokoto-text"> </span>
+        <small id="hitokoto-from" style="opacity: 0.7;"></small>
+        <script>
+        function fetchHitokoto() {
+          fetch('https://v1.hitokoto.cn?c=d&c=h&c=j&c=a')
+            .then(function(res) { return res.json(); })
+            .then(function(data) {
+              const textEl = document.getElementById('hitokoto-text');
+              const fromEl = document.getElementById('hitokoto-from');
+              if(data.hitokoto) {
+                textEl.textContent = '「' + data.hitokoto + '」';
+              }
+              if(data.from || data.from_who) {
+                data.from = data.from || '';
+                data.from_who = data.from_who || '';
+                fromEl.textContent = '—— ' + (data.from_who ? data.from_who + ' ' : '') + '《' + data.from + '》';
+              }
+            })
+            .catch(function(err) {
+              console.error('一言加载失败:', err);
+            });
+        }
+        fetchHitokoto();
+        </script>
 
   # src: # 可以设置外部 md 文件链接
 tagcloud:
