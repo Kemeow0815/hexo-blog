@@ -1,19 +1,24 @@
 let ipLocation; // 确保 ipLocation 在全局范围内定义
+let siteRuntimeInterval = null; // 建站时间定时器 ID
 
-// 进行 fetch 请求
-fetch("https://v1.nsuuu.com/api/ipip/query?key=430f20e186afc214") //申请key:https://api.nsmao.net
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  })
-  .then((data) => {
-    ipLocation = data;
-    // 在首页或包含welcome-info元素的页面都显示
-    showWelcome();
-  })
-  .catch((error) => console.error("Error:", error));
+// 获取 IP 地理位置的函数
+function fetchIpLocation() {
+  return fetch("https://v1.nsuuu.com/api/ipip/query?key=430f20e186afc214")
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      ipLocation = data;
+      return data;
+    })
+    .catch((error) => {
+      console.error("Error:", error);
+      return null;
+    });
+}
 
 function getDistance(e1, n1, e2, n2) {
   const R = 6371;
@@ -616,11 +621,6 @@ function showBasicWelcome() {
   }
 }
 
-function handlePjaxComplete() {
-  // PJAX 完成后重新显示欢迎信息
-  showWelcome();
-}
-
 function isHomePage() {
   return (
     window.location.pathname === "/" ||
@@ -629,11 +629,22 @@ function isHomePage() {
   );
 }
 
-window.onload = function () {
-  showWelcome();
-  document.addEventListener("pjax:complete", handlePjaxComplete);
+// 统一的初始化函数 - 支持 PJAX
+function initCustom() {
+  // 清除旧的建站时间定时器，防止重复
+  if (siteRuntimeInterval) {
+    clearInterval(siteRuntimeInterval);
+    siteRuntimeInterval = null;
+  }
+
+  // 获取 IP 并显示欢迎信息
+  fetchIpLocation().then(() => {
+    showWelcome();
+  });
+
+  // 计算建站时间
   calculateSiteDays();
-};
+}
 
 // 计算建站时间（精确到秒）
 function calculateSiteDays() {
@@ -656,11 +667,16 @@ function calculateSiteDays() {
   }
 
   updateRuntime();
-  // 每秒更新一次
-  setInterval(updateRuntime, 1000);
+  // 每秒更新一次，保存定时器 ID
+  siteRuntimeInterval = setInterval(updateRuntime, 1000);
 }
 
-// PJAX 完成后重新计算建站天数
-document.addEventListener("pjax:complete", function () {
-  calculateSiteDays();
-});
+// 页面首次加载和 PJAX 切换都执行初始化
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initCustom);
+} else {
+  initCustom();
+}
+
+// PJAX 完成后重新初始化
+document.addEventListener("pjax:complete", initCustom);

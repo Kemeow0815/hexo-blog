@@ -340,10 +340,22 @@
     }
   };
 
-  // 初始化
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", loadTalks);
-  } else {
-    loadTalks();
+  // 初始化 - 支持 PJAX
+  function initTalks() {
+    // 检查当前页面是否有 talk 容器
+    const talkContainer = document.querySelector("#talk");
+    if (talkContainer) {
+      loadTalks();
+    }
   }
+
+  // 页面首次加载
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTalks);
+  } else {
+    initTalks();
+  }
+
+  // PJAX 完成后重新初始化
+  document.addEventListener("pjax:complete", initTalks);
 })();
