@@ -6,5 +6,3 @@ comments: true
 ---
 
 <div id="talk" class="talk-container"></div>
-
-<script src="/blog/js/talks.js"></script>
