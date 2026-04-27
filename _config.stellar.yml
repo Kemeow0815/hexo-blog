@@ -388,11 +388,6 @@ footer:
     #     - '[xxx](/)'
     #     - '[xxx](/)'
   content: | # 支持 Markdown 格式
-    <center>
-    <span id="runtime_span" style="display: block; margin: 1rem 0; font-size: 14px; color: var(--text-p2); font-weight: 500; line-height: 1.6; text-align: center;">
-      🦉 正在计算运行时间... 🦉
-    </span>
-    </center>
   # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
 
 

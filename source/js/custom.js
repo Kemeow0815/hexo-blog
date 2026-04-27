@@ -38,8 +38,8 @@ function showWelcome() {
   }
 
   // 检查经纬度数据是否有效
-  const lng = parseFloat(ipLocation.data.lng);
-  const lat = parseFloat(ipLocation.data.lat);
+  let lng = parseFloat(ipLocation.data.lng);
+  let lat = parseFloat(ipLocation.data.lat);
 
   if (isNaN(lng) || isNaN(lat)) {
     console.log(
@@ -48,22 +48,20 @@ function showWelcome() {
       ipLocation.data.lat,
     );
     // 尝试使用其他可能的字段名
-    const altLng = parseFloat(ipLocation.data.longitude || ipLocation.data.lon);
-    const altLat = parseFloat(ipLocation.data.latitude || ipLocation.data.lat);
+    lng = parseFloat(ipLocation.data.longitude || ipLocation.data.lon || ipLocation.data.location_lng || ipLocation.data.经度);
+    lat = parseFloat(ipLocation.data.latitude || ipLocation.data.location_lat || ipLocation.data.纬度);
 
-    if (!isNaN(altLng) && !isNaN(altLat)) {
-      console.log("[welcome] using alternative coordinates:", altLng, altLat);
-      ipLocation.data.lng = altLng;
-      ipLocation.data.lat = altLat;
+    if (!isNaN(lng) && !isNaN(lat)) {
+      console.log("[welcome] using alternative coordinates:", lng, lat);
     } else {
-      console.log("[welcome] no valid coordinates found");
+      console.log("[welcome] no valid coordinates found, full data:", ipLocation.data);
       // 显示基本信息，不显示距离
       showBasicWelcome();
       return;
     }
   }
 
-  let dist = getDistance(118.943934, 32.12039, lng, lat); // 修改自己的经度（121.413921）纬度（31.089290）
+  let dist = getDistance(118.943934, 32.12039, lng, lat);
   let pos = ipLocation.data.country;
   let ip = ipLocation.ip;
   let posdesc;
