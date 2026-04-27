@@ -3,7 +3,7 @@ title: 关于
 layout: about
 menu_id: about
 leftbar: visitor
-rightbar: calendar, ghuser, moment
+rightbar: ghuser, moment
 h1: 
 description: 
 comments: true

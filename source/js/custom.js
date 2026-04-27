@@ -48,13 +48,25 @@ function showWelcome() {
       ipLocation.data.lat,
     );
     // 尝试使用其他可能的字段名
-    lng = parseFloat(ipLocation.data.longitude || ipLocation.data.lon || ipLocation.data.location_lng || ipLocation.data.经度);
-    lat = parseFloat(ipLocation.data.latitude || ipLocation.data.location_lat || ipLocation.data.纬度);
+    lng = parseFloat(
+      ipLocation.data.longitude ||
+        ipLocation.data.lon ||
+        ipLocation.data.location_lng ||
+        ipLocation.data.经度,
+    );
+    lat = parseFloat(
+      ipLocation.data.latitude ||
+        ipLocation.data.location_lat ||
+        ipLocation.data.纬度,
+    );
 
     if (!isNaN(lng) && !isNaN(lat)) {
       console.log("[welcome] using alternative coordinates:", lng, lat);
     } else {
-      console.log("[welcome] no valid coordinates found, full data:", ipLocation.data);
+      console.log(
+        "[welcome] no valid coordinates found, full data:",
+        ipLocation.data,
+      );
       // 显示基本信息，不显示距离
       showBasicWelcome();
       return;
@@ -620,4 +632,35 @@ function isHomePage() {
 window.onload = function () {
   showWelcome();
   document.addEventListener("pjax:complete", handlePjaxComplete);
+  calculateSiteDays();
 };
+
+// 计算建站时间（精确到秒）
+function calculateSiteDays() {
+  // 设置建站日期和时间（请修改为你的实际建站日期时间）
+  const siteStartDate = new Date("2024-11-01T12:00:00"); // 格式：年-月-日T时:分:秒
+
+  function updateRuntime() {
+    const now = new Date();
+    const diff = now - siteStartDate;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const siteRuntimeElement = document.getElementById("site-runtime");
+    if (siteRuntimeElement) {
+      siteRuntimeElement.textContent = `${days}天${hours}小时${minutes}分${seconds}秒`;
+    }
+  }
+
+  updateRuntime();
+  // 每秒更新一次
+  setInterval(updateRuntime, 1000);
+}
+
+// PJAX 完成后重新计算建站天数
+document.addEventListener("pjax:complete", function () {
+  calculateSiteDays();
+});
