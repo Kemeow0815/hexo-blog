@@ -122,7 +122,6 @@ statement:
     layout: markdown
     title: '<br>'
     content: |
-        <hr>
         <center>
         <h4 id="免责声明"> 免责声明 </h4>
         <p> 本站提供的一切软件、教程和内容信息仅限用于学习和研究目的。</p>
