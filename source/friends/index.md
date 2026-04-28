@@ -42,7 +42,7 @@ banner_info:
 
 ## 友链数据
 
-想加入{% button color:orange 友链屋 https://www.268682.xyz icon:friends %}的[点此](https://github.com/Kemeow0815/miaoluoge-links/issues/new?template=friend-link-request.yml)，想加入本站友链，[点此](https://github.com/Kemeow0815/friends)~
+想加入[**友链屋**](https://www.268682.xyz)的[点此](https://github.com/Kemeow0815/miaoluoge-links/issues/new?template=friend-link-request.yml)，想加入本站友链，[点此](https://github.com/Kemeow0815/friends)~
 
 {% tabs active:1 align:center %}
 
@@ -67,10 +67,10 @@ feed: https://kemeow0815.github.io/feed.xml
 <!-- tab 文本信息 -->
 - 网站名称: 喵洛阁
 - 网站地址: https://www.kemiaosw.top
-- 网站头像地址: https://wsrv.nl/?url=github.com%2FKemeow0815.png
-- 网站截图地址: https://imgbed.268682.xyz/v2/wFOi4UQ.png
+- 网站头像: https://wsrv.nl/?url=github.com%2FKemeow0815.png
+- 网站截图: https://imgbed.268682.xyz/v2/wFOi4UQ.png
 - 网站描述: 每一段旅行，都有终点。
-- 网站 RSS 订阅地址: https://kemeow0815.github.io/feed.xml
+- 网站RSS: https://kemeow0815.github.io/feed.xml
 
 
 {% endtabs %}
