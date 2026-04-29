@@ -4,7 +4,7 @@
 
 # Site
 title: 喵洛阁
-avatar: https://wsrv.nl/?url=github.com%2FKemeow0815.png
+avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
 favicon: /favicon.ico
 subtitle: '每一段旅行，都有终点。| www.kemiaosw.top'
 description: '克喵的博客，在这里记录我的生活日常、踩坑记录和资源分享。'
@@ -17,7 +17,6 @@ timezone: 'Asia/Shanghai'
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://kemeow0815.github.io/blog/
 permalink: posts/:abbrlink.html
-
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -132,5 +131,5 @@ abbrlink:
     depth:        #默认为 3
     over_write: false
   auto_title: false #启用自动标题，它可以按路径自动填充标题
-  auto_date: false #启用自动日期，可以按今天的时间自动填写日期
+  auto_date: true #启用自动日期，可以按今天的时间自动填写日期
   force: false #启用 Force 模式，在这种模式下插件将忽略缓存，并为每一篇文章计算生成永久链接，即使它已经有了永久链接。这个设置只会更新永久链接，而不是更新其他前置变量。

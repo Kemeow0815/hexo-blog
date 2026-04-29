@@ -7,7 +7,7 @@ tags:
   - JavaScript
 categories: 技术教程
 description: 详细介绍如何在 Hexo Stellar 博客主题中实现明暗模式切换功能，包含完整的代码实现和配置说明。
-abbrlink: 59445
+abbrlink: bbad5266
 date: 2026-04-25 15:30:00
 ---
 

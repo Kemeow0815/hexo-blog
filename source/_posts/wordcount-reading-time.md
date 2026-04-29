@@ -7,7 +7,7 @@ tags:
   - 阅读时长
 categories: 技术教程
 description: 为 Hexo Stellar 主题添加文章字数统计、阅读时长估算和标签显示功能。
-abbrlink: 10551
+abbrlink: 1a11017e
 date: 2026-04-25 18:00:00
 ---
 

@@ -1,0 +1,35 @@
+// Timetable 课程表页面专用样式
+// 去除左右侧边栏，全宽显示
+
+// 主容器样式
+.l_body[layout="timetable"]
+  display: block
+  
+  .l_main.timetable-main
+    width: 100%
+    max-width: 1200px
+    margin: 0 auto
+    padding: 20px
+    
+    @media screen and (max-width: 768px)
+      padding: 10px
+  
+  // 隐藏左右侧边栏
+  .l_left,
+  .l_right
+    display: none
+
+// 课程表页面标题样式
+.timetable-page-title
+  text-align: center
+  margin-bottom: 2rem
+  
+  h1
+    font-size: 2rem
+    font-weight: 700
+    margin-bottom: 0.5rem
+    color: var(--text-p1)
+  
+  .subtitle
+    color: var(--text-p2)
+    font-size: 0.9rem

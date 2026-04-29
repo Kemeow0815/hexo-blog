@@ -4,7 +4,7 @@ layout: page
 title: 朋友圈
 banner: https://p.268682.xyz/pic?img=ua
 banner_info:
-  avatar: https://wsrv.nl/?url=github.com%2FKemeow0815.png
+  avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
   title: 朋友圈
   subtitle: 这里记录这朋友们的文章
 rightbar: follow

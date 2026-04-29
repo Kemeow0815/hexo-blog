@@ -5,7 +5,7 @@ tags:
   - 代码块
 categories: 测试文章
 description: 测试 macOS 风格的代码块样式
-abbrlink: 41399
+abbrlink: ed02a91f
 date: 2026-04-25 17:00:00
 ---
 

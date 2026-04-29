@@ -1,0 +1,315 @@
+// Timetable 课程表样式
+
+#timetable-app
+  width: 100%
+  position: relative
+
+// 顶部操作按钮组
+.timetable-actions
+  position: absolute
+  top: 0
+  right: 0
+  display: flex
+  align-items: center
+  gap: 0.5rem
+
+// 主题切换按钮
+.timetable-theme-btn
+  display: inline-flex
+  align-items: center
+  justify-content: center
+  width: 36px
+  height: 36px
+  padding: 0
+  background: var(--card)
+  border: 1px solid var(--block-border)
+  border-radius: $border-card-s
+  cursor: pointer
+  transition: all 0.2s ease
+  
+  svg
+    width: 20px
+    height: 20px
+  
+  &:hover
+    background: var(--block)
+    border-color: var(--accent)
+
+// 返回首页按钮
+.timetable-home-btn
+  display: inline-flex
+  align-items: center
+  gap: 0.5rem
+  padding: 0.5rem 1rem
+  background: var(--card)
+  border: 1px solid var(--block-border)
+  border-radius: $border-card-s
+  color: var(--text-p1)
+  font-size: 0.875rem
+  text-decoration: none
+  transition: all 0.2s ease
+  
+  svg
+    width: 18px
+    height: 18px
+    fill: currentColor
+  
+  &:hover
+    background: var(--block)
+    border-color: var(--accent)
+    color: var(--accent)
+
+// 头部
+.timetable-page-title
+  margin-bottom: 1.5rem
+  padding-right: 140px  // 为按钮组留出空间
+  
+  h1
+    font-size: 2rem
+    font-weight: 700
+    margin-bottom: 0.5rem
+    color: var(--text-p1)
+  
+  .subtitle
+    display: flex
+    align-items: center
+    gap: 0.75rem
+    color: var(--text-p2)
+    font-size: 0.9rem
+  
+  .badge
+    display: inline-flex
+    align-items: center
+    padding: 0.25rem 0.75rem
+    background: var(--accent)
+    color: #fff
+    border-radius: 9999px
+    font-size: 0.75rem
+    font-weight: 500
+
+// 保留旧类名兼容
+.timetable-header
+  margin-bottom: 1.5rem
+  
+  h1
+    font-size: 2rem
+    font-weight: 700
+    margin-bottom: 0.5rem
+    color: var(--text-p1)
+  
+  .timetable-meta
+    display: flex
+    align-items: center
+    gap: 0.75rem
+    color: var(--text-p2)
+    font-size: 0.9rem
+  
+  .badge
+    display: inline-flex
+    align-items: center
+    padding: 0.25rem 0.75rem
+    background: var(--accent)
+    color: #fff
+    border-radius: 9999px
+    font-size: 0.75rem
+    font-weight: 500
+
+// 控制栏
+.timetable-controls
+  display: flex
+  align-items: center
+  gap: 1rem
+  margin-bottom: 1.5rem
+  
+  .btn
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    width: 40px
+    height: 40px
+    padding: 0
+    border: 1px solid var(--block-border)
+    background: var(--card)
+    color: var(--text-p1)
+    border-radius: $border-card-s
+    cursor: pointer
+    transition: all 0.2s ease
+    
+    svg
+      width: 20px
+      height: 20px
+      fill: currentColor
+    
+    &:hover:not(:disabled)
+      background: var(--block)
+      border-color: var(--accent)
+    
+    &:disabled
+      opacity: 0.5
+      cursor: not-allowed
+  
+  #current-week-display
+    min-width: 80px
+    text-align: center
+    font-weight: 600
+    font-size: 1rem
+    color: var(--text-p1)
+
+// 桌面端网格视图
+.timetable-desktop
+  display: block
+  
+  @media screen and (max-width: 768px)
+    display: none
+
+.timetable-grid
+  background: var(--card)
+  border-radius: $border-card-l
+  box-shadow: $boxshadow-card
+  overflow: hidden
+
+.grid-header
+  display: grid
+  grid-template-columns: 100px repeat(5, 1fr)
+  background: var(--block)
+  border-bottom: 1px solid var(--block-border)
+  
+  &.show-saturday
+    grid-template-columns: 100px repeat(6, 1fr)
+  
+  .time-col,
+  .day-col
+    padding: 1rem
+    font-weight: 600
+    font-size: 0.9rem
+    color: var(--text-p1)
+    text-align: center
+    
+    &.saturday
+      display: none
+
+.grid-body
+  .grid-row
+    display: grid
+    grid-template-columns: 100px repeat(5, 1fr)
+    border-bottom: 1px solid var(--block-border)
+    
+    &:last-child
+      border-bottom: none
+    
+    &.show-saturday
+      grid-template-columns: 100px repeat(6, 1fr)
+  
+  .time-col
+    padding: 1rem
+    background: var(--block)
+    border-right: 1px solid var(--block-border)
+    
+    .node-text
+      font-weight: 600
+      font-size: 0.85rem
+      color: var(--text-p1)
+      margin-bottom: 0.25rem
+    
+    .time-text
+      font-size: 0.75rem
+      color: var(--text-p3)
+  
+  .day-col
+    padding: 0.75rem
+    min-height: 100px
+    
+    &.empty
+      display: flex
+      align-items: center
+      justify-content: center
+      color: var(--text-p3)
+      font-size: 0.9rem
+
+// 课程卡片
+.course-card
+  padding: 0.75rem
+  border-radius: $border-card-s
+  border-left: 4px solid
+  margin-bottom: 0.5rem
+  
+  &:last-child
+    margin-bottom: 0
+  
+  .course-name
+    font-weight: 600
+    font-size: 0.85rem
+    color: var(--text-p1)
+    margin-bottom: 0.5rem
+    line-height: 1.3
+  
+  .course-info
+    font-size: 0.75rem
+    color: var(--text-p2)
+    line-height: 1.5
+    
+    div
+      margin-bottom: 0.125rem
+
+// 移动端列表视图
+.timetable-mobile
+  display: none
+  
+  @media screen and (max-width: 768px)
+    display: block
+
+.mobile-day-card
+  background: var(--card)
+  border-radius: $border-card-l
+  box-shadow: $boxshadow-card
+  margin-bottom: 1rem
+  overflow: hidden
+  
+  &:last-child
+    margin-bottom: 0
+
+.mobile-day-header
+  padding: 1rem
+  background: var(--block)
+  font-weight: 600
+  font-size: 1rem
+  color: var(--text-p1)
+  border-bottom: 1px solid var(--block-border)
+
+.mobile-day-content
+  padding: 1rem
+
+.no-course
+  text-align: center
+  color: var(--text-p3)
+  font-size: 0.9rem
+  padding: 1rem 0
+
+.mobile-course-card
+  padding: 1rem
+  border-radius: $border-card-s
+  border-left: 4px solid
+  margin-bottom: 0.75rem
+  
+  &:last-child
+    margin-bottom: 0
+  
+  .mobile-course-name
+    font-weight: 600
+    font-size: 0.95rem
+    color: var(--text-p1)
+    margin-bottom: 0.5rem
+  
+  .mobile-course-info
+    font-size: 0.8rem
+    color: var(--text-p2)
+    line-height: 1.6
+    
+    div
+      margin-bottom: 0.25rem
+
+// 深色模式适配
+[data-theme="dark"]
+  .timetable-grid,
+  .mobile-day-card
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3)

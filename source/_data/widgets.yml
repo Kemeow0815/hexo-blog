@@ -31,26 +31,8 @@ welcome:
     content: |
         本站托管于 Github pages, 可能会出现加载缓慢或丢失问题，希望开着VPN访问。
         <br> 
-        每日一言:  <span id="hitokoto-text"> </span>
+        每日一言:  <span id="hitokoto-text">加载中...</span>
         <small id="hitokoto-from" style="opacity: 0.7;"></small>
-        <script>
-        function fetchHitokoto() {
-          fetch('https://60s.050815.xyz/v2/hitokoto?encoding=json')
-            .then(function(res) { return res.json(); })
-            .then(function(result) {
-              const textEl = document.getElementById('hitokoto-text');
-              const fromEl = document.getElementById('hitokoto-from');
-              if(result.code === 200 && result.data && result.data.hitokoto) {
-                textEl.textContent = '「' + result.data.hitokoto + '」';
-                fromEl.textContent = '';
-              }
-            })
-            .catch(function(err) {
-              console.error('一言加载失败:', err);
-            });
-        }
-        fetchHitokoto();
-        </script>
 
   # src: # 可以设置外部 md 文件链接
 tagcloud:
@@ -187,3 +169,35 @@ follow:
         }
       }
     </style>
+
+# 课程表小组件
+timetable:
+  layout: markdown
+  title: '📚 课程表'
+  content: |
+    <a href="/blog/timetable/" class="timetable-widget-link" id="timetable-widget-link">
+      <div class="timetable-widget" id="timetable-widget">
+        <div class="timetable-widget-loading">
+          <div class="loading-spinner"></div>
+          <span>加载中...</span>
+        </div>
+      </div>
+    </a>
+
+# 个人资料卡片组件
+me:
+  layout: me
+  avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
+  badge: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
+  name: 克喵爱吃卤面
+  welcome: 👋 欢迎光临！
+  bio: 你们好呀！我是克喵！一个快乐，积极，热爱生活的孩纸！🎉😜
+  github: https://github.com/Kemeow0815
+
+# 赞赏者轮播组件
+reward:
+  layout: reward
+  title: '💰 赞赏者'
+  api: https://jsd.268682.xyz/gh/Kemeow0815/sponsors@main/data/sponsors/sponsors.json
+  limit: 20
+  interval: 3000

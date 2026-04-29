@@ -1,0 +1,36 @@
+# 赞助页面配置
+# 数据将从 https://jsd.268682.xyz/gh/Kemeow0815/sponsors@main/data/sponsors/sponsors.json 加载
+
+# 页面标题
+title: 赞赏支持
+
+# 页面副标题
+subtitle: 感谢每一位支持我的朋友
+
+# 赞赏方式
+methods:
+  alipay:
+    name: 支付宝
+    icon: /blog/images/alipay.png
+    qr: /blog/images/alipay-qr.png
+  wechat:
+    name: 微信支付
+    icon: /blog/images/wechat.png
+    qr: /blog/images/wechat-qr.png
+
+# 赞赏说明
+description: |
+  如果您觉得我的博客对您有帮助，欢迎赞赏支持！
+  您的每一份支持都是我继续创作的动力。
+
+# 数据 API
+api: https://sponsor.268682.xyz/data/sponsors/sponsors.json
+
+# 侧边栏轮播配置
+sidebar:
+  # 最多显示数量
+  limit: 20
+  # 轮播间隔（毫秒）
+  interval: 3000
+  # 随机排序
+  random: true

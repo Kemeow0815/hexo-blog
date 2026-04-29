@@ -60,7 +60,10 @@
     function updatePagination(activeIndex) {
       const bullets = container.querySelectorAll(".swiper-pagination-bullet");
       bullets.forEach((bullet, i) => {
-        bullet.classList.toggle("swiper-pagination-bullet-active", i === activeIndex);
+        bullet.classList.toggle(
+          "swiper-pagination-bullet-active",
+          i === activeIndex,
+        );
       });
     }
 
@@ -125,16 +128,24 @@
     let touchStartX = 0;
     let touchEndX = 0;
 
-    container.addEventListener("touchstart", (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      stopAutoplay();
-    }, { passive: true });
+    container.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+      },
+      { passive: true },
+    );
 
-    container.addEventListener("touchend", (e) => {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-      startAutoplay();
-    }, { passive: true });
+    container.addEventListener(
+      "touchend",
+      (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+      },
+      { passive: true },
+    );
 
     function handleSwipe() {
       const diff = touchStartX - touchEndX;

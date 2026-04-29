@@ -7,7 +7,7 @@ tags:
   - 代码美化
 categories: 技术教程
 description: 参考其他博客的美化方案，为 Hexo Stellar 主题添加优雅的代码块样式，包含顶部按钮、语法高亮、作者签名等功能。
-abbrlink: 60457
+abbrlink: 248a939e
 date: 2026-04-25 16:00:00
 ---
 

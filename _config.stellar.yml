@@ -19,6 +19,13 @@ inject:
     - '<link rel="stylesheet" href="/blog/css/custom-codeblock.css" type="text/css">'
     - '<link rel="stylesheet" href="/blog/css/calendar.css" type="text/css">'
     - '<link rel="stylesheet" href="/blog/css/swiper-bar.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/toast-notification.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/timetable.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/timetable-layout.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/timetable-widget.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/me-widget.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/sponsor.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/reward-widget.css" type="text/css">'
     # - '<link rel="stylesheet" href="/blog/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
@@ -28,6 +35,14 @@ inject:
     - '<script defer src="/blog/js/about-page.js"></script>'
     - '<script defer src="/blog/js/fclite-pjax.js"></script>'
     - '<script defer src="/blog/js/swiper-bar.js"></script>'
+    - '<script defer src="/blog/js/toast-notification.js"></script>'
+    - '<script defer src="/blog/js/timetable.js"></script>'
+    - '<script defer src="/blog/js/timetable-widget.js"></script>'
+    - '<script defer src="/blog/js/reward-widget.js"></script>'
+    - '<script defer src="/blog/js/donate.js"></script>'
+    - '<script defer src="/blog/js/hitokoto.js"></script>'
+    - '<script defer src="/blog/js/sponsor-page.js"></script>'
+    - '<script defer src="/blog/js/gallery-pjax.js"></script>'
     # - '<script defer src="/blog/js/yyyz.min.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
@@ -92,13 +107,13 @@ site_tree:
   # 主页配置
   home:
     leftbar: welcome, recent, tagcloud
-    rightbar: ghuser, statement, calendar
+    rightbar: me, timetable, statement, calendar
   # 博客列表页配置
   index_blog:
     base_dir: blog # 只影响自动生成的页面路径
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
     leftbar: welcome, recent, tagcloud
-    rightbar: ghuser, statement
+    rightbar: me, statement, reward
     nav_tabs:  # 近期发布 分类 标签 专栏 归档 and ...
       # '朋友文章': /friends/rss/
   # 博客专栏列表页配置
@@ -118,7 +133,7 @@ site_tree:
   post:
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
     leftbar: related, recent # for pages using 'layout:post'
-    rightbar: ghrepo, toc
+    rightbar: ghrepo, toc, reward
   # 博客专栏文章内页配置
   topic:
     menu_id: post
@@ -225,7 +240,7 @@ article:
     max_count: 5
   # 捐赠
   donate:
-    wechat: 'https://upyun.thatcdn.cn/public/img/donate/wechat.png'  # 微信收款二维码地址
+    wechat: '/blog/images/PayQrcode.png'  # 微信收款二维码地址
 
 search:
   service: local_search # local_search, algolia_search, todo...
@@ -373,16 +388,15 @@ footer:
     - title: 博客
       items:
         - '[近期发布](/)'
-        - '[分类](/blog/categories/)'
-        - '[标签](/blog/tags/)'
-        - '[归档](/blog/archives/)'
+        - '[分类](/categories/)'
+        - '[标签](/tags/)'
+        - '[归档](/archives/)'
         - '[关于](/about/)'
-    # - title: 项目
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
+    - title: 页面
+      items:
+        - '[课程表](/timetable/)'
+        - '[相册](/gallery/)'
+        - '[赞赏](/sponsor/)'
     - title: 社交
       items:
         - '[友人帐](/friends/)'

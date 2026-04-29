@@ -6,7 +6,7 @@ tags:
   - 字数统计
 categories: 技术教程
 description: 为 Hexo Stellar 主题添加页面底部全站文章字数统计功能。
-abbrlink: 23062
+abbrlink: 5d63715b
 date: 2026-04-25 19:00:00
 ---
 

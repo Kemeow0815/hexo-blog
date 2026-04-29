@@ -1,0 +1,131 @@
+// Timetable Widget 课程表小组件样式
+
+// 链接样式
+.timetable-widget-link
+  display: block
+  text-decoration: none
+  color: inherit
+
+// 小组件容器
+.timetable-widget
+  background: var(--card)
+  border-radius: 12px
+  box-shadow: $boxshadow-card
+  padding: 1rem
+  transition: all 0.3s ease
+  border: 1px solid var(--block-border)
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1)
+
+// 加载状态
+.timetable-widget-loading
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: 0.5rem
+  padding: 1.5rem 0
+  color: var(--text-p3)
+  font-size: 0.875rem
+
+  .loading-spinner
+    width: 16px
+    height: 16px
+    border: 2px solid var(--block-border)
+    border-top-color: var(--accent)
+    border-radius: 50%
+    animation: timetable-spin 0.8s linear infinite
+
+@keyframes timetable-spin
+  to
+    transform: rotate(360deg)
+
+// 错误状态
+.timetable-widget-error
+  text-align: center
+  padding: 1.5rem 0
+  color: var(--text-p3)
+  font-size: 0.875rem
+
+// 头部 - 状态标题
+.timetable-widget-header
+  margin-bottom: 0.75rem
+
+// 状态标题文字
+.timetable-widget-status
+  font-size: 1.125rem
+  font-weight: 700
+  color: var(--text-p1)
+
+// 内容区域 - 每行信息
+.timetable-info-row
+  display: flex
+  align-items: flex-start
+  gap: 0.5rem
+  font-size: 0.875rem
+  line-height: 1.5
+  margin-bottom: 0.5rem
+  
+  &:last-child
+    margin-bottom: 0
+
+// 标签（如"翌日首节："）
+.timetable-label
+  color: var(--text-p3)
+  white-space: nowrap
+  flex-shrink: 0
+
+// 值区域（包含课程名和教室）
+.timetable-value
+  display: flex
+  flex-wrap: wrap
+  gap: 0 0.5rem
+  align-items: baseline
+
+// 课程名
+.timetable-course-name
+  font-weight: 600
+  color: #f59e0b  // 金黄色
+
+// 教室
+.timetable-room
+  color: var(--text-p2)
+
+// 倒计时
+.timetable-countdown
+  font-weight: 600
+  color: #0ea5e9  // 蓝色
+
+// 深色模式适配
+[data-theme="dark"]
+  .timetable-widget
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3)
+    
+    &:hover
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4)
+  
+  .timetable-course-name
+    color: #fbbf24  // 深色模式金黄色
+  
+  .timetable-countdown
+    color: #38bdf8  // 深色模式蓝色
+
+// 移动端适配
+@media screen and (max-width: 768px)
+  .timetable-widget
+    padding: 0.875rem
+    
+    .timetable-widget-header
+      margin-bottom: 0.625rem
+    
+    .timetable-widget-status
+      font-size: 1rem
+    
+    .timetable-info-row
+      font-size: 0.8125rem
+
+// 小屏幕适配
+@media screen and (max-width: 480px)
+  .timetable-widget
+    padding: 0.75rem

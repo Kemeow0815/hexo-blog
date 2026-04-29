@@ -7,7 +7,7 @@ tags:
   - 说说
 categories: 技术教程
 description: 为 Hexo Stellar 主题添加基于 TgTalk 的说说页面，展示 Telegram 频道消息。
-abbrlink: 12347
+abbrlink: 2ad1033e
 date: 2026-04-25 20:00:00
 ---
 

@@ -1,0 +1,249 @@
+// Sponsor Page 赞助页面样式
+
+// 页面容器
+.sponsor-page
+  max-width: 800px
+  margin: 0 auto
+  padding: 2rem 1rem
+
+// 页面头部
+.sponsor-header
+  text-align: center
+  margin-bottom: 2rem
+
+.sponsor-title
+  font-size: 2rem
+  font-weight: 700
+  color: var(--text-p1)
+  margin-bottom: 0.5rem
+
+.sponsor-subtitle
+  font-size: 1rem
+  color: var(--text-p3)
+
+// 赞赏方式
+.sponsor-methods
+  display: flex
+  justify-content: center
+  gap: 2rem
+  margin-bottom: 2rem
+
+.sponsor-method-item
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 0.5rem
+  padding: 1.5rem 2rem
+  background: var(--card)
+  border-radius: 16px
+  border: 1px solid var(--block-border)
+  transition: all 0.3s ease
+  cursor: pointer
+
+  &:hover
+    transform: translateY(-4px)
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1)
+
+.sponsor-qr
+  width: 160px
+  height: 160px
+  border-radius: 12px
+  overflow: hidden
+  background: #fff
+  padding: 8px
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: contain
+
+.sponsor-method-name
+  font-size: 0.875rem
+  color: var(--text-p2)
+  font-weight: 500
+
+// 赞赏说明
+.sponsor-description
+  text-align: center
+  margin-bottom: 2rem
+  padding: 1.5rem
+  background: var(--block)
+  border-radius: 12px
+
+  p
+    margin: 0.5rem 0
+    color: var(--text-p2)
+    font-size: 0.9375rem
+
+// 赞赏列表区域
+.sponsor-list-section
+  margin-bottom: 2rem
+
+.sponsor-list-title
+  font-size: 1.5rem
+  font-weight: 600
+  color: var(--text-p1)
+  margin-bottom: 1.5rem
+  text-align: center
+
+// 加载状态
+.sponsor-loading
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  padding: 3rem 0
+  color: var(--text-p3)
+  gap: 1rem
+
+  .loading-spinner
+    width: 32px
+    height: 32px
+    border: 3px solid var(--block-border)
+    border-top-color: var(--accent)
+    border-radius: 50%
+    animation: sponsor-spin 0.8s linear infinite
+
+@keyframes sponsor-spin
+  to
+    transform: rotate(360deg)
+
+// 空状态
+.sponsor-empty
+  text-align: center
+  padding: 3rem 0
+  color: var(--text-p3)
+  font-size: 0.9375rem
+
+// 错误状态
+.sponsor-error
+  text-align: center
+  padding: 3rem 0
+  color: #ef4444
+  font-size: 0.9375rem
+
+// 赞赏网格
+.sponsor-grid
+  display: grid
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr))
+  gap: 1rem
+
+// 赞赏项
+.sponsor-item
+  display: flex
+  align-items: center
+  gap: 1rem
+  padding: 1rem
+  background: var(--card)
+  border-radius: 12px
+  border: 1px solid var(--block-border)
+  transition: all 0.3s ease
+  text-decoration: none
+  color: inherit
+
+  &:hover
+    transform: translateY(-2px)
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08)
+
+// 可点击的赞赏项
+.sponsor-item-link
+  cursor: pointer
+  
+  &:hover
+    border-color: var(--accent)
+    
+    .sponsor-name
+      color: var(--accent)
+
+.sponsor-avatar
+  width: 48px
+  height: 48px
+  border-radius: 50%
+  overflow: hidden
+  flex-shrink: 0
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: cover
+
+.sponsor-info
+  display: flex
+  flex-direction: column
+  gap: 0.25rem
+  min-width: 0
+
+.sponsor-name
+  font-size: 0.9375rem
+  font-weight: 600
+  color: var(--text-p1)
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+.sponsor-amount
+  font-size: 0.8125rem
+  color: #f59e0b
+  font-weight: 500
+
+.sponsor-date
+  font-size: 0.75rem
+  color: var(--text-p3)
+
+// 感谢图片
+.sponsor-thanks
+  text-align: center
+  margin: 2rem 0
+
+  img
+    max-width: 200px
+    height: auto
+    border-radius: 12px
+    margin: 0 auto
+    display: block
+
+// 深色模式适配
+[data-theme="dark"]
+  .sponsor-method-item:hover
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3)
+
+  .sponsor-item:hover
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2)
+
+// 移动端适配
+@media screen and (max-width: 768px)
+  .sponsor-page
+    padding: 1.5rem 1rem
+
+  .sponsor-title
+    font-size: 1.5rem
+
+  .sponsor-methods
+    gap: 1rem
+
+  .sponsor-method-item
+    padding: 1rem 1.5rem
+
+  .sponsor-grid
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr))
+    gap: 0.75rem
+
+  .sponsor-item
+    padding: 0.75rem
+
+  .sponsor-avatar
+    width: 40px
+    height: 40px
+
+// 小屏幕适配
+@media screen and (max-width: 480px)
+  .sponsor-methods
+    flex-direction: column
+    align-items: center
+
+  .sponsor-method-item
+    width: 100%
+    max-width: 200px
+
+  .sponsor-grid
+    grid-template-columns: 1fr
