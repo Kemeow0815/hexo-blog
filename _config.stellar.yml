@@ -18,6 +18,7 @@ inject:
   head:
     - '<link rel="stylesheet" href="/blog/css/custom-codeblock.css" type="text/css">'
     - '<link rel="stylesheet" href="/blog/css/calendar.css" type="text/css">'
+    - '<link rel="stylesheet" href="/blog/css/swiper-bar.css" type="text/css">'
     # - '<link rel="stylesheet" href="/blog/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
@@ -26,6 +27,7 @@ inject:
     - '<script defer src="/blog/js/talks.js"></script>'
     - '<script defer src="/blog/js/about-page.js"></script>'
     - '<script defer src="/blog/js/fclite-pjax.js"></script>'
+    - '<script defer src="/blog/js/swiper-bar.js"></script>'
     # - '<script defer src="/blog/js/yyyz.min.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
