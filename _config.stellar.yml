@@ -18,12 +18,15 @@ inject:
   head:
     - '<link rel="stylesheet" href="/blog/css/custom-codeblock.css" type="text/css">'
     - '<link rel="stylesheet" href="/blog/css/calendar.css" type="text/css">'
+    # - '<link rel="stylesheet" href="/blog/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
     - '<script defer src="/blog/js/custom.js"></script>'
     - '<script defer src="/blog/js/chinese-lunar.js"></script>'
     - '<script defer src="/blog/js/talks.js"></script>'
     - '<script defer src="/blog/js/about-page.js"></script>'
+    - '<script defer src="/blog/js/fclite-pjax.js"></script>'
+    # - '<script defer src="/blog/js/yyyz.min.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
 # 如果访问地址不在备用站主机列表，则警告信息为非法克隆
@@ -365,24 +368,23 @@ footer:
       icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/>'
       url: /about/#comments
   sitemap:
-    # - title: 博客
-    #   items:
-    #     - '[近期发布](/)'
-    #     - '[分类](/blog/categories/)'
-    #     - '[标签](/blog/tags/)'
-    #     - '[归档](/blog/archives/)'
+    - title: 博客
+      items:
+        - '[近期发布](/)'
+        - '[分类](/blog/categories/)'
+        - '[标签](/blog/tags/)'
+        - '[归档](/blog/archives/)'
+        - '[关于](/about/)'
     # - title: 项目
     #   items:
     #     - '[xxx](/)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
     #     - '[xxx](/)'
-    # - title: 社交
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
+    - title: 社交
+      items:
+        - '[友人帐](/friends/)'
+        - '[朋友圈](/fcircle/)'
     # - title: 关于
     #   items:
     #     - '[xxx](/)'
