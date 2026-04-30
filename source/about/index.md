@@ -9,7 +9,7 @@ description:
 comments: true
 banner: https://p.268682.xyz/pic?img=ua
 banner_info:
-  avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
+  avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemeow0815.webp
   title: 关于
   subtitle: 关于我......
 ---

@@ -79,7 +79,7 @@
       html += `
         <div class="reward-card-item ${linkClass}" data-index="${index}" ${urlAttr} style="display: ${index === 0 ? "flex" : "none"};">
           <div class="reward-card-avatar">
-            <img src="${sponsor.avatar || "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp"}" alt="${sponsor.name}" loading="lazy">
+            <img src="${sponsor.avatar || "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemeow0815.webp"}" alt="${sponsor.name}" loading="lazy">
           </div>
           <div class="reward-card-info">
             <span class="reward-card-name">${sponsor.name}</span>

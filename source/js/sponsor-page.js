@@ -57,7 +57,7 @@
       html += `
         <${tag} ${hrefAttr} class="sponsor-item ${hasUrl ? "sponsor-item-link" : ""}">
           <div class="sponsor-avatar">
-            <img src="${sponsor.avatar || "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp"}" alt="${sponsor.name}" loading="lazy">
+            <img src="${sponsor.avatar || "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemeow0815.webp"}" alt="${sponsor.name}" loading="lazy">
           </div>
           <div class="sponsor-info">
             <span class="sponsor-name">${sponsor.name}</span>
