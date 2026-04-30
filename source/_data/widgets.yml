@@ -7,7 +7,7 @@ toc:
   collapse: false # true / false / auto (始终折叠/不折叠/自动折叠)
 recent:
   layout: recent
-  rss: # /atom.xml # npm i hexo-generator-feed
+  rss: /atom.xml # npm i hexo-generator-feed
   limit: 5 # Count of posts
 related:
   layout: related
