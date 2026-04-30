@@ -67,7 +67,7 @@ feed: https://kemeow0815.github.io/feed.xml
 <!-- tab 文本信息 -->
 - 网站名称: 喵洛阁
 - 网站地址: https://www.kemiaosw.top
-- 网站头像: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
+- 头像: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
 - 网站截图: https://imgbed.268682.xyz/v2/wFOi4UQ.png
 - 网站描述: 每一段旅行，都有终点。
 - 网站RSS: https://kemeow0815.github.io/feed.xml
