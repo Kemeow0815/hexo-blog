@@ -515,7 +515,7 @@
    */
   async function loadTimetableData() {
     try {
-      const response = await fetch("/blog/data/大三下.json");
+      const response = await fetch("/data/大三下.json");
       const data = await response.json();
       return data;
     } catch (error) {

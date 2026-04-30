@@ -187,9 +187,9 @@ source/js/toast-notification.js
 ```yaml
 inject:
   head:
-    - '<link rel="stylesheet" href="/blog/css/toast-notification.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/toast-notification.css" type="text/css">'
   script:
-    - '<script defer src="/blog/js/toast-notification.js"></script>'
+    - '<script defer src="/js/toast-notification.js"></script>'
 ```
 
 ## 在线演示

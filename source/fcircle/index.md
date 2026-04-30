@@ -12,7 +12,7 @@ rightbar: follow
 
 <!-- <div id="friend-circle-container">与主机通讯中……</div>
 
-<script defer src="/blog/js/fcircle-pjax.js"></script> -->
+<script defer src="/js/fcircle-pjax.js"></script> -->
 <div id="friend-circle-lite-root"></div>
 <script>
     if (typeof UserConfig === 'undefined') {
@@ -26,5 +26,5 @@ rightbar: follow
         }
     }
 </script>
-<link rel="stylesheet" href="/blog/css/fclite.min.css">
-<script defer src="/blog/js/fclite.min.js"></script>
+<link rel="stylesheet" href="/css/fclite.min.css">
+<script defer src="/js/fclite.min.js"></script>

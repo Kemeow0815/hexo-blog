@@ -394,9 +394,9 @@ if (swiperPosts.length === 0) return '';
 ```yaml
 inject:
   head:
-    - '<link rel="stylesheet" href="/blog/css/swiper-bar.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/swiper-bar.css" type="text/css">'
   script:
-    - '<script defer src="/blog/js/swiper-bar.js"></script>'
+    - '<script defer src="/js/swiper-bar.js"></script>'
 ```
 
 ## 使用方法

@@ -14,7 +14,7 @@
   };
 
   const CONTAINER_ID = "friend-circle-lite-root";
-  const FCLITE_SCRIPT_URL = "/blog/js/fclite.min.js";
+  const FCLITE_SCRIPT_URL = "/js/fclite.min.js";
 
   /**
    * 检查当前页面是否是友链朋友圈页面

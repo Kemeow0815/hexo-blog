@@ -45,7 +45,7 @@
     }
 
     try {
-      const response = await fetch("/blog/data/大三下.json");
+      const response = await fetch("/data/大三下.json");
       timetableData = await response.json();
       maxWeek = timetableData.settings.maxWeek;
       currentWeek = resolveCurrentWeek(

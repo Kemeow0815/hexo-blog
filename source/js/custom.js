@@ -625,7 +625,7 @@ function isHomePage() {
   return (
     window.location.pathname === "/" ||
     window.location.pathname === "/index.html" ||
-    window.location.pathname === "/blog/about"
+    window.location.pathname === "/about"
   );
 }
 

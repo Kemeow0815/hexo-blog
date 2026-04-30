@@ -11,12 +11,12 @@ subtitle: 感谢每一位支持我的朋友
 methods:
   alipay:
     name: 支付宝
-    icon: /blog/images/alipay.png
-    qr: /blog/images/alipay-qr.png
+    icon: /images/alipay.png
+    qr: /images/alipay-qr.png
   wechat:
     name: 微信支付
-    icon: /blog/images/wechat.png
-    qr: /blog/images/wechat-qr.png
+    icon: /images/wechat.png
+    qr: /images/wechat-qr.png
 
 # 赞赏说明
 description: |

@@ -61,7 +61,7 @@ url: https://www.kemiaosw.top
 avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemiao0815.webp
 screenshot: https://imgbed.268682.xyz/v2/wFOi4UQ.png
 description: 每一段旅行，都有终点。
-feed: https://kemeow0815.github.io/feed.xml
+feed: https://blog.kemiaosw.top/feed.xml
 ```
 
 <!-- tab 文本信息 -->

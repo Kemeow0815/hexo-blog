@@ -59,7 +59,7 @@
 <html data-theme="${currentTheme}">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/blog/css/yyyz.min.css" type="text/css">
+    <link rel="stylesheet" href="/css/yyyz.min.css" type="text/css">
     <style>
         body {
             margin: 0;
@@ -358,7 +358,7 @@
             error_img: '${CONFIG.errorImg}'
         };
     <\/script>
-    <script src="/blog/js/yyyz.min.js" defer><\/script>
+    <script src="/js/yyyz.min.js" defer><\/script>
     <script>
         // 监听高度变化并通知父页面
         function notifyHeight() {

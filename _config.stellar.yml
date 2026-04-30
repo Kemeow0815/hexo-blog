@@ -16,34 +16,35 @@ preconnect:
 # 自定义注入到 head 的 HTML 代码
 inject:
   head:
-    - '<link rel="stylesheet" href="/blog/css/custom-codeblock.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/calendar.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/swiper-bar.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/toast-notification.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/timetable.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/timetable-layout.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/timetable-widget.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/me-widget.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/sponsor.css" type="text/css">'
-    - '<link rel="stylesheet" href="/blog/css/reward-widget.css" type="text/css">'
-    # - '<link rel="stylesheet" href="/blog/css/yyyz.min.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/custom-codeblock.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/calendar.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/swiper-bar.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/toast-notification.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/timetable.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/timetable-layout.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/timetable-widget.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/me-widget.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/sponsor.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/reward-widget.css" type="text/css">'
+    # - '<link rel="stylesheet" href="/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
-    - '<script defer src="/blog/js/custom.js"></script>'
-    - '<script defer src="/blog/js/chinese-lunar.js"></script>'
-    - '<script defer src="/blog/js/talks.js"></script>'
-    - '<script defer src="/blog/js/about-page.js"></script>'
-    - '<script defer src="/blog/js/fclite-pjax.js"></script>'
-    - '<script defer src="/blog/js/swiper-bar.js"></script>'
-    - '<script defer src="/blog/js/toast-notification.js"></script>'
-    - '<script defer src="/blog/js/timetable.js"></script>'
-    - '<script defer src="/blog/js/timetable-widget.js"></script>'
-    - '<script defer src="/blog/js/reward-widget.js"></script>'
-    - '<script defer src="/blog/js/donate.js"></script>'
-    - '<script defer src="/blog/js/hitokoto.js"></script>'
-    - '<script defer src="/blog/js/sponsor-page.js"></script>'
-    - '<script defer src="/blog/js/gallery-pjax.js"></script>'
-    # - '<script defer src="/blog/js/yyyz.min.js"></script>'
+    - '<script defer src="/js/custom.js"></script>'
+    - '<script defer src="/js/chinese-lunar.js"></script>'
+    - '<script defer src="/js/talks.js"></script>'
+    - '<script defer src="/js/about-page.js"></script>'
+    - '<script defer src="/js/fclite-pjax.js"></script>'
+    - '<script defer src="/js/swiper-bar.js"></script>'
+    - '<script defer src="/js/toast-notification.js"></script>'
+    - '<script defer src="/js/timetable.js"></script>'
+    - '<script defer src="/js/timetable-widget.js"></script>'
+    - '<script defer src="/js/reward-widget.js"></script>'
+    - '<script defer src="/js/donate.js"></script>'
+    - '<script defer src="/js/hitokoto.js"></script>'
+    - '<script defer src="https://analytics.268682.xyz/tracker.min.js" data-website-id="stellar"></script>'
+    - '<script defer src="/js/sponsor-page.js"></script>'
+    - '<script defer src="/js/gallery-pjax.js"></script>'
+    # - '<script defer src="/js/yyyz.min.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
 # 如果访问地址不在备用站主机列表，则警告信息为非法克隆
@@ -53,7 +54,7 @@ canonical:
   originalHost: # 主站点域名主机，例如 xaoxuu.com
   officialHosts: # 官方主机列表，每行一个，例如 xaoxuu.vercel.app
     - localhost
-    - https://kemeow0815.github.io/blog/
+    - https://blog.kemiaosw.top/
 
 open_graph:
   enable: false
@@ -67,7 +68,7 @@ structured_data:
 # 左上角显示的 logo 区域，包含图标、大标题、副标题
 logo:
   avatar: '[{config.avatar}](/about/)' # you can set avatar link in _config.yml or '[https://xxx.png](/about/)'
-  title: '[<img no-lazy height="40px" src="/blog/images/site.png"/>](/blog)' # 使用图片作为标题
+  title: '[<img no-lazy height="40px" src="/images/site.png"/>](/)' # 使用图片作为标题
   subtitle: '{config.subtitle}' # '文字1 | 文字2' (鼠标放上去会切换到文字2)
 
 # 侧边栏主功能导航菜单
@@ -240,7 +241,7 @@ article:
     max_count: 5
   # 捐赠
   donate:
-    wechat: '/blog/images/PayQrcode.png'  # 微信收款二维码地址
+    wechat: '/images/PayQrcode.png'  # 微信收款二维码地址
 
 search:
   service: local_search # local_search, algolia_search, todo...
