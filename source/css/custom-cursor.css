@@ -1,0 +1,164 @@
+/* 自定义鼠标样式 */
+
+/* 全局默认光标 */
+body,
+* {
+  cursor: url('/default.cur'), auto !important;
+}
+
+/* 链接和按钮保持指针样式，但使用自定义光标 */
+a,
+button,
+[role="button"],
+.clickable,
+.cursor-pointer {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 输入框保持文本光标 */
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: url('/default.cur'), text !important;
+}
+
+/* 禁用状态的元素 */
+[disabled],
+.disabled {
+  cursor: url('/default.cur'), not-allowed !important;
+}
+
+/* 可拖动的元素 */
+[draggable="true"] {
+  cursor: url('/default.cur'), move !important;
+}
+
+/* 图片和链接的悬停效果 */
+img,
+.blog-slider__img,
+.post-cover,
+.article-cover {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 导航菜单 */
+.nav-link,
+.menu-item,
+.menubar-item {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 侧边栏组件 */
+.widget a,
+.sidebar a,
+.leftbar a,
+.rightbar a {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 文章卡片 */
+.post-card,
+.article-card,
+.blog-slider__item {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 分页器 */
+.paginator a,
+.pagination a,
+.page-number {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 标签和分类 */
+.tag,
+.category,
+.hashtag {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 折叠面板 */
+.fold-header,
+.folding-header {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 代码块复制按钮 */
+.copy-btn,
+.code-copy {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 主题切换按钮 */
+#ThemeToggle,
+.theme-toggle {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 返回顶部按钮 */
+.back-to-top,
+#back-to-top {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 搜索框 */
+.search-input,
+#search-input {
+  cursor: url('/default.cur'), text !important;
+}
+
+.search-btn,
+#search-btn {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 友链卡片 */
+.friend-card,
+.sites-card {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 赞赏二维码 */
+.sponsor-qr-img,
+.donate-img {
+  cursor: url('/default.cur'), zoom-in !important;
+}
+
+/* 课程表控件 */
+.timetable-controls button,
+#prev-week,
+#next-week,
+#timetable-theme-toggle {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 轮播图控件 */
+.blog-slider__button,
+.swiper-button-prev,
+.swiper-button-next {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 分页指示器 */
+.swiper-pagination-bullet,
+.blog-slider__pagination > div {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 即刻短文 */
+.moment-item,
+.talk-item {
+  cursor: url('/default.cur'), default !important;
+}
+
+/* 评论区域 */
+.comment-btn,
+.twikoo-submit,
+.waline-submit {
+  cursor: url('/default.cur'), pointer !important;
+}
+
+/* 确保所有可交互元素都有正确的光标 */
+*:hover {
+  cursor: url('/default.cur'), inherit !important;
+}

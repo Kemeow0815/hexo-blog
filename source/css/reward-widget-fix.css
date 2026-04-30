@@ -1,0 +1,77 @@
+/* Reward Widget 右侧栏定位修复 */
+
+/* 修复右侧栏 sticky 定位导致的组件位置问题 */
+.l_body .l_right {
+  /* 确保右侧栏可以正常滚动 */
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+}
+
+/* 自定义滚动条样式 */
+.l_body .l_right::-webkit-scrollbar {
+  width: 4px;
+}
+
+.l_body .l_right::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.l_body .l_right::-webkit-scrollbar-thumb {
+  background: var(--text-p3);
+  border-radius: 2px;
+}
+
+.l_body .l_right::-webkit-scrollbar-thumb:hover {
+  background: var(--text-p2);
+}
+
+/* 修复 widgets 容器 */
+.l_body .l_right .widgets {
+  height: auto;
+  min-height: 100%;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem;
+}
+
+/* 确保 reward-widget 正常显示 */
+.reward-widget {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* 修复其他可能受影响的 widget */
+.l_body .l_right .widget {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* TOC 组件保持 sticky 在顶部 */
+.l_body .l_right .widget.toc,
+.l_body .l_right .widget#toc {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--card);
+}
+
+/* 平板设备上的修复 */
+@media screen and (max-width: 1024px) {
+  .l_body .l_right {
+    overflow-y: auto;
+  }
+  
+  .l_body .l_right .widgets {
+    height: auto;
+  }
+}
+
+/* 移动端不需要修复，因为是 fixed 定位 */
+@media screen and (max-width: 768px) {
+  .l_body .l_right {
+    overflow-y: auto;
+  }
+}

@@ -26,6 +26,8 @@ inject:
     - '<link rel="stylesheet" href="/css/me-widget.css" type="text/css">'
     - '<link rel="stylesheet" href="/css/sponsor.css" type="text/css">'
     - '<link rel="stylesheet" href="/css/reward-widget.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/custom-cursor.css" type="text/css">'
+    # - '<link rel="stylesheet" href="/css/reward-widget-fix.css" type="text/css">' 不用开启
     # - '<link rel="stylesheet" href="/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
@@ -133,8 +135,8 @@ site_tree:
   # 博客文章内页配置
   post:
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
-    leftbar: related, recent # for pages using 'layout:post'
-    rightbar: ghrepo, toc, reward
+    leftbar: related, recent, reward # for pages using 'layout:post'
+    rightbar: ghrepo, toc
   # 博客专栏文章内页配置
   topic:
     menu_id: post
