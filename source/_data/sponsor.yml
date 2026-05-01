@@ -12,11 +12,11 @@ methods:
   alipay:
     name: 支付宝
     icon: /images/alipay.png
-    qr: /images/alipay-qr.png
+    qr: /images/alipay.avif
   wechat:
     name: 微信支付
     icon: /images/wechat.png
-    qr: /images/wechat-qr.png
+    qr: /images/weixin.avif
 
 # 赞赏说明
 description: |

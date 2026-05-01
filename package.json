@@ -19,6 +19,7 @@
     "hexo-generator-category": "^2.0.0",
     "hexo-generator-feed": "^4.0.0",
     "hexo-generator-index": "^4.0.0",
+    "hexo-generator-random": "^1.0.2",
     "hexo-generator-tag": "^2.0.0",
     "hexo-related-popular-posts": "^5.0.1",
     "hexo-renderer-ejs": "^2.0.0",
@@ -27,6 +28,7 @@
     "hexo-server": "^3.0.0",
     "hexo-theme-landscape": "^1.0.0",
     "hexo-wordcount": "^6.0.1",
+    "object-assign": "^4.1.1",
     "probe-image-size": "^7.2.3",
     "save": "^2.9.0"
   }

@@ -69,13 +69,17 @@ moment:
   api: https://tgtalk.kemeow.top/ # 即刻短文数据 API
   limit: 5 # 显示数量限制
 
-# 来访者欢迎组件
+# 来访者欢迎组件 - 基于小小API
 visitor:
-  layout: welcome
-  title: 📍 来访者
-  content_id: welcome-info
-  content_css: 'min-height:120px;'
-  content_html: ''
+  layout: markdown
+  title: '📍 来访者'
+  content: |
+    <div id="welcome-info" class="visitor-widget-content">
+      <div class="visitor-loading">
+        <div class="visitor-spinner"></div>
+        <span>正在获取位置信息...</span>
+      </div>
+    </div>
 
 # 日历组件
 calendar:
@@ -201,3 +205,40 @@ reward:
   api: https://jsd.268682.xyz/gh/Kemeow0815/sponsors@main/data/sponsors/sponsors.json
   limit: 20
   interval: 3000
+
+# 音乐卡片组件
+musiccard:
+  layout: markdown
+  title: '🎵 随心听'
+  content: |
+    <div class="music-card-widget" data-music-card></div>
+    <script>
+      // 音乐卡片配置
+      window.MUSIC_CARD_CONFIG = {
+        // 本地音乐列表（当不启用 Meting API 时使用）
+        localPlaylist: [
+          {
+            name: '一句话形容不了终极笔记',
+            artist: '叶落梦中/御A桑/灬阿楚灬/绯言/小山xl/应有棠/霄镁/郭曦阳/堇墨安歌/天罗',
+            url: 'https://cdn.jsdmirror.com/gh/Kemeow0815/music@main/music/%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BD%A2%E5%AE%B9%E4%B8%8D%E4%BA%86%E7%BB%88%E6%9E%81%E7%AC%94%E8%AE%B0.mp3',
+            pic: 'https://jsd.268682.xyz/gh/Kemeow0815/music@main/cover/%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BD%A2%E5%AE%B9%E4%B8%8D%E4%BA%86%E7%BB%88%E6%9E%81%E7%AC%94%E8%AE%B0.jpg'
+          },
+          {
+            name: 'Starlight',
+            artist: 'ウルトラ超特急',
+            url: 'https://jsd.268682.xyz/gh/Kemeow0815/music@main/music/starlight.mp3',
+            pic: 'https://jsd.268682.xyz/gh/Kemeow0815/music@main/cover/starlight.jpg'
+          }
+        ],
+        // Meting API 配置（如需使用网易云/QQ音乐等，请配置）
+        meting: {
+          enable: false,  // 是否启用 Meting API
+          api: 'https://api.i-meto.com/meting/api',
+          server: 'netease',  // netease, tencent, kugou, xiami, baidu
+          type: 'playlist',   // playlist, album, artist, song
+          id: ''  // 歌单/专辑/艺人 ID
+        },
+        autoplay: false,
+        random: true  // 随机播放
+      };
+    </script>

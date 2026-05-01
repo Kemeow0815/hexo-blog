@@ -27,11 +27,14 @@ inject:
     - '<link rel="stylesheet" href="/css/sponsor.css" type="text/css">'
     - '<link rel="stylesheet" href="/css/reward-widget.css" type="text/css">'
     - '<link rel="stylesheet" href="/css/custom-cursor.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/visitor-widget.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/music-card.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/icons-theme.css" type="text/css">'
     # - '<link rel="stylesheet" href="/css/reward-widget-fix.css" type="text/css">' 不用开启
     # - '<link rel="stylesheet" href="/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
-    - '<script defer src="/js/custom.js"></script>'
+    # - '<script defer src="/js/custom.js"></script>'
     - '<script defer src="/js/chinese-lunar.js"></script>'
     - '<script defer src="/js/talks.js"></script>'
     - '<script defer src="/js/about-page.js"></script>'
@@ -46,6 +49,9 @@ inject:
     - '<script defer src="https://analytics.268682.xyz/tracker.min.js" data-website-id="stellar"></script>'
     - '<script defer src="/js/sponsor-page.js"></script>'
     - '<script defer src="/js/gallery-pjax.js"></script>'
+    - '<script defer src="/js/random-post.js"></script>'
+    - '<script defer src="/js/visitor-widget.js"></script>'
+    - '<script defer src="/js/music-card.js"></script>'
     # - '<script defer src="/js/yyyz.min.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
@@ -110,7 +116,7 @@ site_tree:
   # 主页配置
   home:
     leftbar: welcome, recent, tagcloud
-    rightbar: me, timetable, statement, calendar
+    rightbar: me, timetable, musiccard ,statement, calendar
   # 博客列表页配置
   index_blog:
     base_dir: blog # 只影响自动生成的页面路径
@@ -375,18 +381,25 @@ footer:
     theme:
       icon: '<img id="ThemeToggle" src="https://upyun.thatcdn.cn/public/img/icon/Sun.png"/>'
       url: javaScript:void('切换主题');
+    random:
+      icon: 'random'
+      url: '#'
+      attr: 'data-random-post'
     github:
-      icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/08a41b181ce68.svg"/>'
+      icon: 'github'
       url: https://github.com/Kemeow0815
-    music:
-      icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3845874.svg"/>'
-      url: /
-    unsplash:
-      icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/3616429.svg"/>'
-      url: /
-    comments:
-      icon: '<img src="https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/social/942ebbf1a4b91.svg"/>'
-      url: /about/#comments
+    telegram:
+      icon: 'telegram'
+      url: https://t.me/Kemeow0815
+    qq:
+      icon: 'qq'
+      url: https://qm.qq.com/q/5Uygyalp1m
+    mail:
+      icon: 'mail'
+      url: mailto:mcy@kemiaos.top
+    bilibili:
+      icon: 'bilibili'
+      url: https://space.bilibili.com/3546643173477234
   sitemap:
     - title: 博客
       items:
@@ -682,8 +695,6 @@ plugins:
     enable: false # 此插件会和代码块冲突，仅适用于纯中文博主。
     css: https://unpkg.com/heti@0.9/umd/heti.min.css
     js: https://unpkg.com/heti@0.9/umd/heti-addon.min.js
-
-
 
 style:
   prefers_theme: auto # auto / light / dark

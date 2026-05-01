@@ -1,0 +1,140 @@
+/* 图标明暗模式适配 */
+
+/* 默认状态 - 使用主题文字颜色 */
+.icon,
+.svg-icon,
+svg[fill="currentColor"],
+svg [fill="currentColor"] {
+  color: var(--text);
+}
+
+/* 描边图标 */
+svg[stroke="currentColor"],
+svg [stroke="currentColor"] {
+  stroke: var(--text);
+}
+
+/* 社交链接中的图标 */
+.social-link .icon,
+.social-link svg,
+.footer-social .icon,
+.footer-social svg {
+  color: var(--text-p2);
+  transition: color 0.2s ease;
+}
+
+.social-link:hover .icon,
+.social-link:hover svg,
+.footer-social a:hover .icon,
+.footer-social a:hover svg {
+  color: var(--theme);
+}
+
+/* 菜单栏图标 */
+.menubar-item .icon,
+.menubar-item svg {
+  color: var(--text);
+}
+
+.menubar-item:hover .icon,
+.menubar-item:hover svg {
+  color: var(--theme);
+}
+
+/* 友链图标 */
+.friend-card .icon,
+.friend-card svg {
+  color: var(--text);
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .icon,
+[data-theme="dark"] .svg-icon,
+[data-theme="dark"] svg[fill="currentColor"],
+[data-theme="dark"] svg [fill="currentColor"] {
+  color: var(--text);
+}
+
+[data-theme="dark"] svg[stroke="currentColor"],
+[data-theme="dark"] svg [stroke="currentColor"] {
+  stroke: var(--text);
+}
+
+[data-theme="dark"] .social-link .icon,
+[data-theme="dark"] .social-link svg,
+[data-theme="dark"] .footer-social .icon,
+[data-theme="dark"] .footer-social svg {
+  color: var(--text-p2);
+}
+
+[data-theme="dark"] .social-link:hover .icon,
+[data-theme="dark"] .social-link:hover svg,
+[data-theme="dark"] .footer-social a:hover .icon,
+[data-theme="dark"] .footer-social a:hover svg {
+  color: var(--theme);
+}
+
+/* 按钮中的图标 */
+.btn .icon,
+button .icon,
+.btn svg,
+button svg {
+  color: inherit;
+}
+
+/* 链接中的图标 */
+a .icon,
+a svg {
+  color: inherit;
+}
+
+/* 侧边栏图标 */
+.sidebar .icon,
+.sidebar svg,
+.leftbar .icon,
+.leftbar svg,
+.rightbar .icon,
+.rightbar svg {
+  color: var(--text);
+}
+
+/* 文章中的图标 */
+.article .icon,
+.article svg,
+.post .icon,
+.post svg {
+  color: var(--text);
+}
+
+/* 确保图标大小一致 */
+.icon,
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* 导航栏图标 */
+.nav-link .icon,
+.nav-link svg {
+  color: var(--text-p2);
+}
+
+.nav-link:hover .icon,
+.nav-link:hover svg,
+.nav-link.active .icon,
+.nav-link.active svg {
+  color: var(--theme);
+}
+
+/* 页脚图标特殊处理 */
+.footer .icon,
+.footer svg {
+  color: var(--text-p2);
+}
+
+.footer a:hover .icon,
+.footer a:hover svg {
+  color: var(--theme);
+}
