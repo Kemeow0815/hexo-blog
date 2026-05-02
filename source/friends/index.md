@@ -52,7 +52,7 @@ banner_info:
 {% copy https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemeow0815.webp prefix:avatar %}
 {% copy https://imgbed.268682.xyz/v2/wFOi4UQ.png prefix:screenshot %}
 {% copy 每一段旅行，都有终点。 prefix:description %}
-{% copy https://kemeow0815.github.io/feed.xml prefix:feed %}
+{% copy https://blog.kemiaosw.top/atom.xml prefix:feed %}
 
 <!-- tab 格式化信息  -->
 ```yml
@@ -61,7 +61,7 @@ url: https://www.kemiaosw.top
 avatar: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemeow0815.webp
 screenshot: https://imgbed.268682.xyz/v2/wFOi4UQ.png
 description: 每一段旅行，都有终点。
-feed: https://blog.kemiaosw.top/feed.xml
+feed: https://blog.kemiaosw.top/atom.xml
 ```
 
 <!-- tab 文本信息 -->
@@ -70,7 +70,7 @@ feed: https://blog.kemiaosw.top/feed.xml
 - 头像: https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/kemeow0815.webp
 - 网站截图: https://imgbed.268682.xyz/v2/wFOi4UQ.png
 - 网站描述: 每一段旅行，都有终点。
-- 网站RSS: https://kemeow0815.github.io/feed.xml
+- 网站RSS: https://blog.kemiaosw.top/atom.xml
 
 
 {% endtabs %}

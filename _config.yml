@@ -180,6 +180,7 @@ hexo_safego:
       - "gcore.jsdelivr.net"
       - "unpkg.com"
       - "cdnjs.cloudflare.com"
+      - "kemeow0815.github.io"
       # 社交媒体
       - "github.com"
       - "github.io"
