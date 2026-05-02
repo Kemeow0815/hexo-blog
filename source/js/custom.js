@@ -638,9 +638,13 @@ function initCustom() {
   }
 
   // 获取 IP 并显示欢迎信息
-  fetchIpLocation().then(() => {
-    showWelcome();
-  });
+  fetchIpLocation()
+    .then(() => {
+      showWelcome();
+    })
+    .catch((err) => {
+      console.error("[Custom JS] fetchIpLocation error:", err);
+    });
 
   // 计算建站时间
   calculateSiteDays();
@@ -661,6 +665,7 @@ function calculateSiteDays() {
     const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
     const siteRuntimeElement = document.getElementById("site-runtime");
+
     if (siteRuntimeElement) {
       siteRuntimeElement.textContent = `${days}天${hours}小时${minutes}分${seconds}秒`;
     }

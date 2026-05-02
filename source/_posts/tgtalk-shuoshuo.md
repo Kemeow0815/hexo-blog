@@ -1,16 +1,12 @@
 ---
 title: Hexo Stellar 添加 TgTalk 说说页面
-tags:
-  - Hexo
-  - Stellar
-  - TgTalk
-  - 说说
+tags: 
 categories: 技术教程
 description: 为 Hexo Stellar 主题添加基于 TgTalk 的说说页面，展示 Telegram 频道消息。
 abbrlink: 2ad1033e
-date: 2026-04-25 20:00:00
+date: "2026-04-25 20:00:00"
+ai_summary: Hexo Stellar 添加 TgTalk 说说页面效果预览，展示来自 TgTalk API 的消息。该功能包括实时显示、精美样式、图片展示、时间显示、浏览量展示、本地缓存等高级功能。实现步骤包括创建 JavaScript 文件、创建说说页面、添加 CSS 样式、重新生成博客。API 配置包括 TgTalk API URL、缓存时间等参数。
 ---
-
 # Hexo Stellar 添加 TgTalk 说说页面
 
 ## 效果预览

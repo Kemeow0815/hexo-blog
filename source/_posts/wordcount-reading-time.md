@@ -1,16 +1,12 @@
 ---
 title: Hexo Stellar 添加文章字数统计和阅读时长
-tags:
-  - Hexo
-  - Stellar
-  - 字数统计
-  - 阅读时长
+tags: 
 categories: 技术教程
 description: 为 Hexo Stellar 主题添加文章字数统计、阅读时长估算和标签显示功能。
 abbrlink: 1a11017e
-date: 2026-04-25 18:00:00
+date: "2026-04-25 18:00:00"
+ai_summary: 文章介绍了如何在Hexo Stellar主题中添加文章字数统计和阅读时长的显示效果。首先，创建了一个名为wordcount.js的文件，用于计算文章的字数和阅读时长。然后，修改了文章导航栏模板，在页面底部添加了字数和阅读时长的显示。最后，通过CSS样式调整了显示格式，使得字数和阅读时长以更友好的方式呈现。
 ---
-
 # Hexo Stellar 添加文章字数统计和阅读时长
 
 ## 效果预览

@@ -1,14 +1,12 @@
 ---
 title: 代码块样式测试
-tags:
-  - 测试
-  - 代码块
+tags: 
 categories: 测试文章
 description: 测试 macOS 风格的代码块样式
 abbrlink: ed02a91f
-date: 2026-04-25 17:00:00
+date: "2026-04-25 17:00:00"
+ai_summary: 本文介绍了如何测试macOS风格的代码块样式，包括JavaScript、Python、CSS和HTML代码示例。同时，还提供了Shell命令、Java、C++、Go、Rust、PHP、SQL和Ruby代码示例。最后，测试说明指出，如果看不到圆点，请检查CSS文件是否正确加载，浏览器缓存是否已清除，代码块是否使用了正确的语言标记。
 ---
-
 # 代码块样式测试
 
 本文用于测试新添加的 macOS 风格代码块样式。

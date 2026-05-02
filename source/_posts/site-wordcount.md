@@ -1,15 +1,12 @@
 ---
 title: Hexo Stellar 添加全站字数统计
-tags:
-  - Hexo
-  - Stellar
-  - 字数统计
+tags: 
 categories: 技术教程
 description: 为 Hexo Stellar 主题添加页面底部全站文章字数统计功能。
 abbrlink: 5d63715b
-date: 2026-04-25 19:00:00
+date: "2026-04-25 19:00:00"
+ai_summary: 文章介绍了如何在Hexo Stellar主题中添加全站字数统计功能，通过创建辅助函数和修改模板文件，实现了在博客页面底部实时显示总字数的功能。具体步骤包括：1. 创建计算全站文章总字数的辅助函数；2. 修改Footer模板文件，添加全站字数统计；3. 添加CSS样式；4. 重新生成博客。该功能可以让用户快速了解博客的总字数，方便用户进行内容管理和优化。
 ---
-
 # Hexo Stellar 添加全站字数统计
 
 ## 效果预览

@@ -221,13 +221,13 @@ musiccard:
             name: '一句话形容不了终极笔记',
             artist: '叶落梦中/御A桑/灬阿楚灬/绯言/小山xl/应有棠/霄镁/郭曦阳/堇墨安歌/天罗',
             url: 'https://cdn.jsdmirror.com/gh/Kemeow0815/music@main/music/%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BD%A2%E5%AE%B9%E4%B8%8D%E4%BA%86%E7%BB%88%E6%9E%81%E7%AC%94%E8%AE%B0.mp3',
-            pic: 'https://jsd.268682.xyz/gh/Kemeow0815/music@main/cover/%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BD%A2%E5%AE%B9%E4%B8%8D%E4%BA%86%E7%BB%88%E6%9E%81%E7%AC%94%E8%AE%B0.jpg'
+            pic: 'https://cdn.jsdmirror.com/gh/Kemeow0815/music@main/cover/%E4%B8%80%E5%8F%A5%E8%AF%9D%E5%BD%A2%E5%AE%B9%E4%B8%8D%E4%BA%86%E7%BB%88%E6%9E%81%E7%AC%94%E8%AE%B0.jpg'
           },
           {
             name: 'Starlight',
             artist: 'ウルトラ超特急',
-            url: 'https://jsd.268682.xyz/gh/Kemeow0815/music@main/music/starlight.mp3',
-            pic: 'https://jsd.268682.xyz/gh/Kemeow0815/music@main/cover/starlight.jpg'
+            url: 'https://cdn.jsdmirror.com/gh/Kemeow0815/music@main/music/starlight.mp3',
+            pic: 'https://cdn.jsdmirror.com/gh/Kemeow0815/music@main/cover/starlight.jpg'
           }
         ],
         // Meting API 配置（如需使用网易云/QQ音乐等，请配置）

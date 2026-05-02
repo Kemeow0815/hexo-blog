@@ -161,20 +161,24 @@
   }
 
   /**
-   * 获取本周所有课程
+   * 获取指定周的所有课程
+   * @param {Object} timetableData - 课程表数据
+   * @param {number} week - 周数，如果不传则使用当前周
    */
-  function getAllCoursesThisWeek(timetableData) {
+  function getAllCoursesThisWeek(timetableData, week) {
     const schedules = timetableData.schedules || [];
     const courses = timetableData.courses || [];
-    const currentWeek = resolveCurrentWeek(
-      timetableData.settings?.startDate,
-      timetableData.settings?.maxWeek || 20,
-    );
+    const targetWeek =
+      week ||
+      resolveCurrentWeek(
+        timetableData.settings?.startDate,
+        timetableData.settings?.maxWeek || 20,
+      );
 
     const allCourses = [];
 
     for (const schedule of schedules) {
-      if (currentWeek < schedule.startWeek || currentWeek > schedule.endWeek)
+      if (targetWeek < schedule.startWeek || targetWeek > schedule.endWeek)
         continue;
 
       const course = courses.find((c) => c.id === schedule.id);
@@ -221,9 +225,14 @@
     const currentMinute = Math.floor(currentSecond / 60);
     const day = now.getDay() === 0 ? 7 : now.getDay();
 
-    // 周末 (周六日)
+    // 周末 (周六日) - 获取下一周的课程
     if (day >= 6) {
-      const allCourses = getAllCoursesThisWeek(timetableData);
+      const currentWeek = resolveCurrentWeek(
+        timetableData.settings?.startDate,
+        timetableData.settings?.maxWeek || 20,
+      );
+      const nextWeek = currentWeek + 1;
+      const allCourses = getAllCoursesThisWeek(timetableData, nextWeek);
       const nextWeekFirstCourse = allCourses.find((c) => c.day === 1);
 
       if (nextWeekFirstCourse) {

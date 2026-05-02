@@ -1,0 +1,131 @@
+/* AI 摘要样式 - 适配 Hexo Stellar 主题 */
+
+.ai-summary-container {
+  margin: 1.5rem 2rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, var(--card) 0%, var(--block) 100%);
+  border: 1px solid var(--block-border);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 文章顶部位置的 AI 摘要 */
+.article.banner + .ai-summary-container {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.ai-summary-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--theme) 0%, var(--accent) 100%);
+}
+
+/* 标题区域 */
+.ai-summary-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.ai-summary-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.ai-summary-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: var(--theme);
+}
+
+.ai-summary-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.ai-summary-tag {
+  margin-left: auto;
+  padding: 2px 8px;
+  background: var(--theme);
+  color: #fff;
+  font-size: 0.7rem;
+  border-radius: 10px;
+}
+
+/* 内容区域 */
+.ai-summary-content {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: var(--text-p1);
+  min-height: 1.8em;
+}
+
+/* 打字机效果 */
+.ai-summary-content.typing::after {
+  content: '|';
+  animation: blink 1s infinite;
+  color: var(--theme);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* 免责声明 */
+.ai-summary-disclaimer {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--block-border);
+  font-size: 0.75rem;
+  color: var(--text-p3);
+}
+
+/* 深色模式适配 */
+[data-theme="dark"] .ai-summary-container {
+  background: linear-gradient(135deg, var(--card) 0%, var(--block) 100%);
+  border-color: var(--block-border);
+}
+
+[data-theme="dark"] .ai-summary-content {
+  color: var(--text-p1);
+}
+
+[data-theme="dark"] .ai-summary-disclaimer {
+  border-top-color: var(--block-border);
+  color: var(--text-p3);
+}
+
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+  .ai-summary-container {
+    padding: 0.875rem 1rem;
+    margin: 1rem 0;
+  }
+  
+  .ai-summary-content {
+    font-size: 0.9rem;
+  }
+  
+  .ai-summary-disclaimer {
+    font-size: 0.7rem;
+  }
+}
+
+/* 简化版样式（可选） */
+.ai-summary-container.compact {
+  padding: 0.75rem 1rem;
+}
+
+.ai-summary-container.compact .ai-summary-disclaimer {
+  display: none;
+}

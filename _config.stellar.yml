@@ -30,11 +30,13 @@ inject:
     - '<link rel="stylesheet" href="/css/visitor-widget.css" type="text/css">'
     - '<link rel="stylesheet" href="/css/music-card.css" type="text/css">'
     - '<link rel="stylesheet" href="/css/icons-theme.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/icons-fix.css" type="text/css">'
+    - '<link rel="stylesheet" href="/css/ai-summary.css" type="text/css">'
     # - '<link rel="stylesheet" href="/css/reward-widget-fix.css" type="text/css">' 不用开启
     # - '<link rel="stylesheet" href="/css/yyyz.min.css" type="text/css">'
   script:
     - '<script src="https://open.lightxi.com/unpkg/chinese-lunar@0.1.4/lib/chinese-lunar.js"></script>'
-    # - '<script defer src="/js/custom.js"></script>'
+    - '<script defer src="/js/custom.js"></script>'
     - '<script defer src="/js/chinese-lunar.js"></script>'
     - '<script defer src="/js/talks.js"></script>'
     - '<script defer src="/js/about-page.js"></script>'
@@ -52,6 +54,7 @@ inject:
     - '<script defer src="/js/random-post.js"></script>'
     - '<script defer src="/js/visitor-widget.js"></script>'
     - '<script defer src="/js/music-card.js"></script>'
+    - '<script defer src="/js/ai-summary.js"></script>'
     # - '<script defer src="/js/yyyz.min.js"></script>'
 
 # 一旦设置源站地址，非源站地址将不会被SEO收录，并且访问时弹出提示
@@ -142,7 +145,7 @@ site_tree:
   post:
     menu_id: post # 未在 front-matter 中指定 menu_id 时，layout 为 post 的页面默认使用这里配置的 menu_id
     leftbar: related, recent, reward # for pages using 'layout:post'
-    rightbar: ghrepo, toc
+    rightbar: ghrepo, toc # AI 摘要已移至文章顶部显示
   # 博客专栏文章内页配置
   topic:
     menu_id: post
@@ -382,23 +385,23 @@ footer:
       icon: '<img id="ThemeToggle" src="https://upyun.thatcdn.cn/public/img/icon/Sun.png"/>'
       url: javaScript:void('切换主题');
     random:
-      icon: 'random'
+      icon: 'https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/random-logo.webp'
       url: '#'
       attr: 'data-random-post'
     github:
-      icon: 'github'
+      icon: 'https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/github.webp'
       url: https://github.com/Kemeow0815
     telegram:
-      icon: 'telegram'
+      icon: 'https://cdn.jsdmirror.com/gh/yxksw/icons@main/socials/telegram.svg'
       url: https://t.me/Kemeow0815
     qq:
-      icon: 'qq'
+      icon: 'https://cdn.jsdmirror.com/gh/yxksw/icons@main/socials/qq.svg'
       url: https://qm.qq.com/q/5Uygyalp1m
     mail:
-      icon: 'mail'
+      icon: 'https://cdn.jsdmirror.com/gh/yxksw/icons@main/socials/mail.svg'
       url: mailto:mcy@kemiaos.top
     bilibili:
-      icon: 'bilibili'
+      icon: 'https://cdn.jsdmirror.com/gh/yxksw/icons@main/socials/bilibili.svg'
       url: https://space.bilibili.com/3546643173477234
   sitemap:
     - title: 博客
@@ -413,16 +416,17 @@ footer:
         - '[课程表](/timetable/)'
         - '[相册](/gallery/)'
         - '[赞赏](/sponsor/)'
-    - title: 社交
-      items:
         - '[友人帐](/friends/)'
         - '[朋友圈](/fcircle/)'
-    # - title: 关于
-    #   items:
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
-    #     - '[xxx](/)'
+    - title: 页面
+      items:
+        - '[主页](https://www.kemiaosw.top)'
+        - '[友链屋](https://www.268682.xyz)'
+        - '[音乐](https://kemeow0815.github.io/music)'
+        - '[封面制作](https://kemeow0815.github.io/cover)'
+    - title: 跳转
+      items:
+        - '[开往](https://www.travellings.cn/go.html)'
   content: | # 支持 Markdown 格式
   # 主题用户越多，开发者维护和更新的积极性就越高，如果您喜欢本主题，请在适当的位置显示主题信息和仓库链接以表支持。
 

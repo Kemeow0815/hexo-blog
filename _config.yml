@@ -133,3 +133,73 @@ abbrlink:
   auto_title: false #启用自动标题，它可以按路径自动填充标题
   auto_date: true #启用自动日期，可以按今天的时间自动填写日期
   force: false #启用 Force 模式，在这种模式下插件将忽略缓存，并为每一篇文章计算生成永久链接，即使它已经有了永久链接。这个设置只会更新永久链接，而不是更新其他前置变量。
+
+# hexo-safego安全跳转插件
+# see https://blog.liushen.fun/posts/1dfd1f41/
+hexo_safego:
+  # 基本功能设置
+  general:
+    enable: true                # 启用插件
+    enable_base64_encode: true  # 使用 Base64 编码
+    enable_target_blank: true   # 从新窗口打开跳转页面
+
+  # 安全设置
+  security:
+    url_param_name: 'u'         # URL 参数名
+    html_file_name: 'go.html'   # 重定向页面的文件名
+    ignore_attrs:               # 忽略处理的 HTML 结构
+      - 'data-fancybox'
+
+  # 容器与页面设置
+  scope:
+    apply_containers:           # 应用的容器选择器
+      - '#article-container'    # 文章容器
+      - '.md-text'              # 文章内容
+      - '.post-content'         # 文章内容（Stellar主题）
+      - '.friends-container'    # 友链容器
+      - '.sites-wrapper'        # 友链包装器
+    apply_pages:                # 应用的页面路径
+      - "/posts/"               # 文章页
+      - "/friends/"             # 友链页
+      - "/devices/"
+    exclude_pages:              # 排除的页面路径
+      - "/go.html"
+
+  # 域名白名单
+  whitelist:
+    domain_whitelist:           # 允许的白名单域名，通过字符串匹配实现
+      # 本站域名
+      - "blog.kemiaosw.top"
+      - "www.kemiaosw.top"
+      - "localhost:4000"
+      - "localhost"
+      # 常用国内服务
+      - "jsd.268682.xyz"        # 你的 jsDelivr 镜像
+      - "jsdelivr.net"
+      - "cdn.jsdelivr.net"
+      - "gcore.jsdelivr.net"
+      - "unpkg.com"
+      - "cdnjs.cloudflare.com"
+      # 社交媒体
+      - "github.com"
+      - "github.io"
+      - "bilibili.com"
+      - "space.bilibili.com"
+      - "weibo.com"
+      # 常用工具
+      - "baidu.com"
+      - "google.com"
+      - "bing.com"
+
+  # 页面外观设置
+  appearance:
+    avatar: /avatar.ico    # 跳转页面头像路径
+    title: "喵洛阁"            # 跳转页面标题
+    subtitle: "安全中心"         # 跳转页面副标题
+    darkmode: auto              # 是否启用深色模式
+    countdowntime: 4            # 跳转页面倒计时秒数，如果设置为负数则为不自动跳转
+    custom_css: /css/go.css     # 自定义 CSS，可填相对路径或绝对 CSS 地址；留空则不插入
+
+  # 调试设置
+  debug:
+    enable: false               # 启用调试模式

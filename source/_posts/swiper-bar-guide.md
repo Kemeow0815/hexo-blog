@@ -8,14 +8,14 @@ tags:
   - Stellar
   - 轮播
   - Swiper
-cover: 'https://p.268682.xyz/pic?img=ua'
+cover: "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/hexo-swiper-bar.webp"
 swiper_index: 10
-swiper_cover: 'https://p.268682.xyz/pic?img=ua'
+swiper_cover: "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/hexo-swiper-bar.webp"
 swiper_desc: 为 Hexo Stellar 主题添加文章轮播组件，支持置顶文章展示、自动轮播、触摸滑动等功能。
 abbrlink: 6973b1b8
-date: 2026-04-29 14:30:00
+date: "2026-04-29 14:30:00"
+ai_summary: 文章介绍了如何为博客添加Swiper Bar轮播组件，包括创建样式文件、交互脚本、EJS模板等步骤。实现了自动轮播、置顶文章优先展示、触摸滑动、明暗模式等功能。
 ---
-
 ## 前言
 
 最近为博客添加了 Swiper Bar 轮播组件，可以在首页顶部展示置顶文章或最新文章。本文将详细介绍实现过程。

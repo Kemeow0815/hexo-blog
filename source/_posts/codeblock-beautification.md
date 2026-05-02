@@ -1,16 +1,27 @@
 ---
 title: Hexo Stellar 代码块美化指南
-tags:
-  - Hexo
-  - Stellar
-  - CSS
-  - 代码美化
+tags: 
 categories: 技术教程
 description: 参考其他博客的美化方案，为 Hexo Stellar 主题添加优雅的代码块样式，包含顶部按钮、语法高亮、作者签名等功能。
 abbrlink: 248a939e
-date: 2026-04-25 16:00:00
----
+date: "2026-04-25 16:00:00"
+ai: 
+ai_summary: "Hexo Stellar 代码块美化指南
 
+### 前言
+
+在编写博客时，代码块的展示方式直接影响到读者的阅读体验。为了让代码块更加美观和易读，我们提供了一套详细的美化方案，包括样式调整、响应式设计以及作者签名等。通过这些方法，你的 Hexo Stellar 博客代码块将焕然一新，提升整体的视觉效果。
+
+### 美化步骤
+
+1. **创建自定义 CSS 文件**：在博客的 `source/css/` 目录下创建一个名为 `customcodeblock.css` 的文件。
+2. **添加美化样式**：将以下代码复制到 `customcodeblock.css` 文件中：
+   ```css
+   /* macOS 风格顶部按钮 */
+   .hljs::before { content: \"© YourName🌙\"; }
+   /* 优雅借鉴提示 */
+   .highlight::"
+---
 # Hexo Stellar 代码块美化指南
 
 ## 效果预览

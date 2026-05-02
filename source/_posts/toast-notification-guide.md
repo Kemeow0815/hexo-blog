@@ -1,22 +1,20 @@
 ---
 title: Hexo Stellar 添加 Toast Notification 通知悬浮窗
 description: 为 Hexo Stellar 主题添加轻量级通知悬浮窗组件，支持成功、错误、警告、信息等多种类型。
-categories:
-  - 技术教程
-tags:
-  - Hexo
-  - Stellar
-  - Toast
-  - Notification
-  - 通知
-cover: 'https://p.268682.xyz/pic?img=ua'
+categories: 
+- 技术教程
+tags: 
+- Hexo
+- Stellar
+- 通知
+cover: "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/hexo-toast-confirm.webp"
 swiper_index: 9
-swiper_cover: 'https://p.268682.xyz/pic?img=ua'
+swiper_cover: "https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/hexo-toast-confirm.webp"
 swiper_desc: 为 Hexo Stellar 主题添加轻量级通知悬浮窗组件，支持成功、错误、警告、信息等多种类型。
 abbrlink: 794688f8
-date: 2026-04-29 15:00:00
+date: "2026-04-29 15:00:00"
+ai_summary: 文章介绍了如何为Hexo Stellar主题添加Toast Notification组件，使页面上显示优雅的通知消息。该组件支持多种类型（成功、错误、警告、信息），自动消失，并具有进度条显示和动画效果。此外，还支持自定义位置、按钮和关闭回调等特性。
 ---
-
 ## 前言
 
 为博客添加了 Toast Notification 通知悬浮窗组件，可以在页面上显示优雅的通知消息。本文将详细介绍实现过程。
