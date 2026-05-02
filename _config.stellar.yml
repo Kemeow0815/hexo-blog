@@ -386,8 +386,7 @@ footer:
       url: javaScript:void('切换主题');
     random:
       icon: 'https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/random-logo.webp'
-      url: '#'
-      attr: 'data-random-post'
+      url: 'javascript:toRandomPost();'
     github:
       icon: 'https://jsd.268682.xyz/gh/Kemeow0815/img@main/img/github.webp'
       url: https://github.com/Kemeow0815
