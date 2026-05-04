@@ -34,7 +34,7 @@
     "hexo-wordcount": "^6.0.1",
     "minimatch": "^9.0.3",
     "object-assign": "^4.1.1",
-    "probe-image-size": "^7.2.3",
+    "probe-image-size": "^7.3.0",
     "save": "^2.9.0"
   },
   "devDependencies": {
