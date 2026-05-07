@@ -16,7 +16,7 @@
     "axios": "^1.15.2",
     "cheerio": "^1.2.0",
     "dotenv": "^17.4.2",
-    "hexo": "^8.0.0",
+    "hexo": "^8.1.2",
     "hexo-abbrlink": "^2.2.1",
     "hexo-generator-ai-summary": "^1.0.0",
     "hexo-generator-archive": "^2.0.0",
